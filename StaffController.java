@@ -7,15 +7,16 @@ public class StaffController {
     public enum LoginFeedback {WRONGUSERNAMEPASSWORD, ALREADYLOGGEDIN, LOGINSUCCESS}
     public enum LogoutFeedback {ALREADYLOGGEDOUT, LOGOUTSUCCESS}
 
-    private Cineplex[] cineplexes;
     private List<MovieInfo> movies;
     private List<Booking> bookings;
     private List<MovieShowing> movieShowings;
     private List<Date> holidays;
     private boolean loggedIn;
+    // define some constants
+    private static final String staffUsername = "moblima";
+    private static final String staffPassword = "imStaff";
 
-    public StaffController(Cineplex[] cineplexes, ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings, ArrayList<Date> holidays) {
-        this.cineplexes = cineplexes;
+    public StaffController(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings, ArrayList<Date> holidays) {
         this.movies = movies;
         this.bookings = bookings;
         this.movieShowings = movieShowings;
@@ -53,7 +54,7 @@ public class StaffController {
 
     public LoginFeedback login(String username, String password) {
         if (!loggedIn) {
-            if (username.equals("moblimaStaff") && password.equals("imStaff")) {
+            if (username.equals(staffUsername) && password.equals(staffPassword)) {
                 return LoginFeedback.LOGINSUCCESS;
             } else {
                 return LoginFeedback.WRONGUSERNAMEPASSWORD;

@@ -1,0 +1,52 @@
+[
+  {
+    "title": "The Martian",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "THREED",
+    "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian” home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
+    "director": "Ridley Scoot",
+    "casts": [
+      "Matt Damon",
+      "Jessica Chastain"
+    ],
+    "overallRating": 4.0,
+    "pastReviews": [
+      {
+        "content": "This movie is good.",
+        "rating": 5
+      },
+      {
+        "content": "Nice show and it don\u0027t feels long.",
+        "rating": 4
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "PG13",
+    "sale": 35
+  },
+  {
+    "title": "Burnt",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "THREED",
+    "synopsis": "Chef Adam Jones (Bradley Cooper) had it all—and lost it. A two-star Michelin rockstar with the bad habits to match, the former enfant terrible of the Paris restaurant scene did everything different every time out, and only ever cared about the thrill of creating explosions of taste. To land his own kitchen and that third elusive Michelin star though, he’ll need the best of the best on his side, including the beautiful Helene (Sienna Miller). Burnt is a remarkably funny and emotional story about the love of food, the love between two people, and the power of second chances.",
+    "director": "John Wells",
+    "casts": [
+      "Bradley Cooper",
+      "Sienna Miller"
+    ],
+    "overallRating": 4.0,
+    "pastReviews": [
+      {
+        "content": "This is very good",
+        "rating": 5
+      },
+      {
+        "content": "Interesting",
+        "rating": 3
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "NC16",
+    "sale": 5
+  }
+]

@@ -1,7 +1,8 @@
 package moblima.control;
 
-import java.util.ArrayList;
+import java.io.File;
 import java.util.Date;
+import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import moblima.entity.Booking;
@@ -13,9 +14,9 @@ import moblima.boundary.MovieGoerInterface;
 
 public class MainController {
     // define some constants
-    private static final String movieInfoPath = "movie_info.json";
-    private static final String movieShowingPath = "movie_showing.json";
-    private static final String bookingPath = "booking.json";
+    private static final String movieInfoPath = "db" + File.separator + "movie_info.json";
+    private static final String movieShowingPath = "db" + File.separator + "movie_showing.json";
+    private static final String bookingPath = "db" + File.separator + "booking.json";
 
     public static void start() {
         // load entities from json files

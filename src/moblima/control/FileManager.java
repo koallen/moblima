@@ -29,7 +29,6 @@ public class FileManager {
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
             movies = gson.fromJson(br, new TypeToken<ArrayList<MovieInfo>>(){}.getType());
-            System.out.println(movies);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,7 +40,6 @@ public class FileManager {
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
             movieShowings = gson.fromJson(br, new TypeToken<ArrayList<MovieShowing>>(){}.getType());
-            System.out.println(movieShowings);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,7 +51,6 @@ public class FileManager {
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
             bookings = gson.fromJson(br, new TypeToken<ArrayList<Booking>>(){}.getType());
-            System.out.println(bookings);
         } catch (IOException e) {
             e.printStackTrace();
         }

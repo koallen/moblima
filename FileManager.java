@@ -12,8 +12,8 @@ public class FileManager {
     private FileManager(){}
 
     public static getInstance() {
-        if (fm == null) {
-            fm = new FileManager();
+        if (fileManager == null) {
+            fileManager = new FileManager();
         }
         return fm;
     }

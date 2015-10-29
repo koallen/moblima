@@ -1,3 +1,5 @@
+package moblima.entity;
+
 import java.util.*;
 
 public class MovieInfo implements Cloneable {

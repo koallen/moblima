@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class Cinema {
 
     public enum ClassOfCinema { GOLD, MAX, NORMAL }

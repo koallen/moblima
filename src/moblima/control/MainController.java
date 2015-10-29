@@ -1,5 +1,13 @@
+package moblima.control;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import moblima.entity.Booking;
+import moblima.entity.MovieInfo;
+import moblima.entity.MovieShowing;
+import moblima.boundary.UserInterface;
+import moblima.boundary.StaffInterface;
+import moblima.boundary.MovieGoerInterface;
 
 public class MainController {
     // define some constants

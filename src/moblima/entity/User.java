@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class User {
     public enum TypeOfUser {STAFF, MOVIEGOER}
 
@@ -5,7 +7,7 @@ public class User {
     private boolean active;
 
     public User() {
-        typeOfUser = MOVIEGOER;
+        typeOfUser = TypeOfUser.MOVIEGOER;
         active = true;
     }
 
@@ -20,7 +22,7 @@ public class User {
     }
 
     public boolean isMovieGoer() {
-        if (typeOfUser == MOVIEGOER)
+        if (typeOfUser == TypeOfUser.MOVIEGOER)
             return true;
         return false;
     }

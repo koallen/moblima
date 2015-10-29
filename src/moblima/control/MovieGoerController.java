@@ -1,10 +1,16 @@
+package moblima.control;
+
 import java.util.*;
+import moblima.entity.Booking;
+import moblima.entity.MovieInfo;
+import moblima.entity.MovieShowing;
+
 public class MovieGoerController {
     private List<Date> holidays;
     private ArrayList<MovieInfo> movies;
     private ArrayList<Booking> bookings;
     private ArrayList<MovieShowing> movieShowings;
-    
+
     public MovieGoerController(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings) {
         this.movies = movies;
         this.bookings = bookings;
@@ -95,7 +101,7 @@ public class MovieGoerController {
             if(movieShowing.getShowTime() == holidays.get(count)){
                 price += 3;
             }
-                
+
         }
         return price;
     }

@@ -1,3 +1,7 @@
+package moblima.boundary;
+
+import moblima.entity.User;
+
 public class UserInterface {
     private User currentUser;
 

@@ -1,3 +1,7 @@
+package moblima;
+
+import moblima.control.MainController;
+
 /**
 * This is the starting point of MOBLIMA, a movie booking system
 *

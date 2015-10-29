@@ -1,4 +1,10 @@
+package moblima.boundary;
+
 import java.util.*;
+import moblima.entity.User;
+import moblima.entity.MovieInfo;
+import moblima.entity.MovieShowing;
+import moblima.control.StaffController;
 
 /**
 * TODOs: implement update/removeMovieListing, create/update/removeMovieShowing, updateTicketPrice, addHoliday

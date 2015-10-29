@@ -1,3 +1,5 @@
+package moblima.control;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.io.FileReader;
@@ -5,17 +7,20 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import moblima.entity.Booking;
+import moblima.entity.MovieInfo;
+import moblima.entity.MovieShowing;
 
 public class FileManager {
     private static FileManager fileManager = null;
 
     private FileManager(){}
 
-    public static getInstance() {
+    public static FileManager getInstance() {
         if (fileManager == null) {
             fileManager = new FileManager();
         }
-        return fm;
+        return fileManager;
     }
 
     protected static ArrayList<MovieInfo> loadMovieInfo(String filename, Gson gson) {

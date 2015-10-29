@@ -1,4 +1,9 @@
+package moblima.control;
+
 import java.util.*;
+import moblima.entity.Booking;
+import moblima.entity.MovieInfo;
+import moblima.entity.MovieShowing;
 
 /**
 * TODOs: add a search function

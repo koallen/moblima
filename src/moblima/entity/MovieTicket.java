@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class MovieTicket {
 
     private MovieShowing movie;

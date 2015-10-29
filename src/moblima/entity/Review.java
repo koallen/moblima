@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class Review {
     private String content;
     private int rating;

@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class Booking {
     private MovieTicket movieTicket;
     private Payment payment;

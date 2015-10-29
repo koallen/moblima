@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class Payment {
     private String transactionID;
     private String name;

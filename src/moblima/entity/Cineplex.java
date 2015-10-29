@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class Cineplex{
 	private String cineplexName;
 	private Cinema[] cinema;

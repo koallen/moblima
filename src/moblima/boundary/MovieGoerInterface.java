@@ -1,7 +1,12 @@
+package moblima.boundary;
+
 import java.util.Scanner;
+import moblima.entity.User;
+import moblima.control.MovieGoerController;
 
 public class MovieGoerInterface {
     private MovieGoerController movieGoerController;
+
     public MovieGoerInterface(MovieGoerController movieGoerController){
         this.movieGoerController = movieGoerController;
     }
@@ -10,8 +15,8 @@ public class MovieGoerInterface {
         String movieName, movieGoerName, bookingId;
         MovieInfo moveInfo;
         MovieShowing movieShowing;
-        
-        
+
+
         Scanner sc = new Scanner(System.in);
 
         print();
@@ -49,8 +54,8 @@ public class MovieGoerInterface {
         String movieName, movieGoerName, bookingId;
         MovieInfo moveInfo;
         MovieShowing movieShowing;
-        
-        
+
+
         Scanner sc = new Scanner(System.in);
         while (true){
                     System.out.println("Please input the name of the movie that you want to book");

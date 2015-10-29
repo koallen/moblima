@@ -1,3 +1,5 @@
+package moblima.entity;
+
 public class Seat {
     public enum enumSeat { NOTEXIST, TAKEN, NOTTAKEN }
     private String seatID;

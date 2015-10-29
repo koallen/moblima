@@ -4,9 +4,13 @@ import moblima.entity.User;
 
 public class UserInterface {
     private User currentUser;
+    private MovieGoerInterface movieGoerInterface;
+    private StaffInterface staffInterface;
 
-    public UserInterface() {
-        currentUser = new User();
+    public UserInterface(MovieGoerInterface movieGoerInterface, StaffInterface staffInterface) {
+        this.movieGoerInterface = movieGoerInterface;
+        this.staffInterface = staffInterface;
+        this.currentUser = new User();
     }
 
     public void start() {
@@ -15,9 +19,9 @@ public class UserInterface {
         // start interacting with user
         while (currentUser.isActive()) {
             if (currentUser.isMovieGoer()) {
-                currentUser = MovieGoerInterface.interact();
+                currentUser = movieGoerInterface.interact();
             } else {
-                currentUser = StaffInterface.interact();
+                currentUser = staffInterface.interact();
             }
         }
 

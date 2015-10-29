@@ -1,5 +1,7 @@
 package moblima.control;
 
+import java.util.ArrayList;
+import java.util.Date;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import moblima.entity.Booking;
@@ -20,20 +22,21 @@ public class MainController {
         FileManager fileManager = FileManager.getInstance();
         Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat("dd/MM/yyyy hh:mm").create();
 
-        List<MovieInfo> movies = fileManager.loadMovieInfo(movieInfoPath, gson);
-        List<MovieShowing> movieShowings = fileManager.loadMovieShowing(movieShowingPath, gson);
-        List<Booking> bookings = fileManager.loadBooking(bookingPath, gson);
+        ArrayList<MovieInfo> movies = fileManager.loadMovieInfo(movieInfoPath, gson);
+        ArrayList<MovieShowing> movieShowings = fileManager.loadMovieShowing(movieShowingPath, gson);
+        ArrayList<Booking> bookings = fileManager.loadBooking(bookingPath, gson);
+        ArrayList<Date> holidays = null;
 
         // construct controls from entities
-        MovieGoerController movieGoerController = new MovieGoerController(); // not finished
-        StaffController staffController = new StaffController(); // not finished
+        MovieGoerController movieGoerController = new MovieGoerController(holidays, movies, bookings, movieShowings);
+        StaffController staffController = new StaffController(movies, bookings, movieShowings, holidays); // not finished
 
         // construct boundaries from controls
         MovieGoerInterface movieGoerInterface = new MovieGoerInterface(movieGoerController);
         StaffInterface staffInterface = new StaffInterface(staffController);
 
         // construct main interface
-        UserInterface userInterface = new UserInterface(); // not finished
+        UserInterface userInterface = new UserInterface(movieGoerInterface, staffInterface);
 
         // start interaction
         userInterface.start();

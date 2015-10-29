@@ -1,17 +1,22 @@
 package moblima.control;
 
 import java.util.*;
+import moblima.entity.Seat;
+import moblima.entity.Review;
 import moblima.entity.Booking;
+import moblima.entity.Payment;
 import moblima.entity.MovieInfo;
+import moblima.entity.MovieTicket;
 import moblima.entity.MovieShowing;
 
 public class MovieGoerController {
     private List<Date> holidays;
-    private ArrayList<MovieInfo> movies;
-    private ArrayList<Booking> bookings;
-    private ArrayList<MovieShowing> movieShowings;
+    private List<MovieInfo> movies;
+    private List<Booking> bookings;
+    private List<MovieShowing> movieShowings;
 
-    public MovieGoerController(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings) {
+    public MovieGoerController(ArrayList<Date> holidays, ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings) {
+        this.holidays = holidays;
         this.movies = movies;
         this.bookings = bookings;
         this.movieShowings = movieShowings;

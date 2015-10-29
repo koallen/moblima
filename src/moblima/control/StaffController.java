@@ -1,6 +1,7 @@
 package moblima.control;
 
 import java.util.*;
+import moblima.entity.Review;
 import moblima.entity.Booking;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
@@ -138,11 +139,11 @@ public class StaffController {
         Collections.sort(movies, new Comparator<MovieInfo>() {
             @Override
             public int compare(MovieInfo movie1, MovieInfo movie2) {
-                return (movie1.getOverallRating() - movie2.getOverallRating());
+                return (int)(movie1.getOverallRating() - movie2.getOverallRating());
             }
         });
 
-        return (ArrayList)movies.subList(movies.size()-5, movies.size());
+        return (ArrayList<MovieInfo>)movies.subList(movies.size()-5, movies.size());
     }
 
     public void calculateOverallRating(MovieInfo movie) {

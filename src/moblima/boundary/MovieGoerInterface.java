@@ -2,6 +2,11 @@ package moblima.boundary;
 
 import java.util.Scanner;
 import moblima.entity.User;
+import moblima.entity.Seat;
+import moblima.entity.Payment;
+import moblima.entity.MovieInfo;
+import moblima.entity.MovieTicket;
+import moblima.entity.MovieShowing;
 import moblima.control.MovieGoerController;
 
 public class MovieGoerInterface {

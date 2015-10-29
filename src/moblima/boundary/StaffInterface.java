@@ -2,6 +2,7 @@ package moblima.boundary;
 
 import java.util.*;
 import moblima.entity.User;
+import moblima.entity.Review;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
 import moblima.control.StaffController;
@@ -56,7 +57,7 @@ public class StaffInterface {
                 updateTicketPrice(index, sc);
                 break;
             case 10:
-                addHoliday();
+                //addHoliday();
                 break;
             case 11:
                 // done
@@ -219,7 +220,7 @@ public class StaffInterface {
 
     }
 
-    private void removeMovieShowing(Scanner sc) {
+    private void removeMovieShowing(int index) {
         MovieShowing movieShowingToRemove;
         movieShowingToRemove = staffController.searchForMovieShowing(index);
         staffController.removeMovieShowing(movieShowingToRemove);

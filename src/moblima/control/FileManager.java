@@ -24,7 +24,7 @@ public class FileManager {
         return fileManager;
     }
 
-    protected static ArrayList<MovieInfo> loadMovieInfo(String filename, Gson gson) {
+    protected ArrayList<MovieInfo> loadMovieInfo(String filename, Gson gson) {
         ArrayList<MovieInfo> movies = null;
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -35,7 +35,7 @@ public class FileManager {
         return movies;
     }
 
-    protected static ArrayList<MovieShowing> loadMovieShowing(String filename, Gson gson) {
+    protected ArrayList<MovieShowing> loadMovieShowing(String filename, Gson gson) {
         ArrayList<MovieShowing> movieShowings = null;
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -46,7 +46,7 @@ public class FileManager {
         return movieShowings;
     }
 
-    protected static ArrayList<Booking> loadBooking(String filename, Gson gson) {
+    protected ArrayList<Booking> loadBooking(String filename, Gson gson) {
         ArrayList<Booking> bookings = null;
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -57,7 +57,7 @@ public class FileManager {
         return bookings;
     }
 
-    protected static void saveMovieInfo(List<MovieInfo> movies, String filename, Gson gson) {
+    protected void saveMovieInfo(List<MovieInfo> movies, String filename, Gson gson) {
         String json = gson.toJson(movies);
         try {
             FileWriter writer = new FileWriter(filename);
@@ -68,7 +68,7 @@ public class FileManager {
         }
     }
 
-    protected static void saveMovieShowing(List<MovieShowing> movieShowings, String filename, Gson gson) {
+    protected  void saveMovieShowing(List<MovieShowing> movieShowings, String filename, Gson gson) {
         String json = gson.toJson(movieShowings);
         try {
             FileWriter writer = new FileWriter(filename);
@@ -79,7 +79,7 @@ public class FileManager {
         }
     }
 
-    protected static void saveBooking(List<Booking> bookings, String filename, Gson gson) {
+    protected void saveBooking(List<Booking> bookings, String filename, Gson gson) {
         String json = gson.toJson(bookings);
         try {
             FileWriter writer = new FileWriter(filename);

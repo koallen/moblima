@@ -29,18 +29,14 @@ public class MainController {
         ArrayList<Date> holidays = null;
 
         // construct controls from entities
-        MovieGoerController movieGoerController = new MovieGoerController(holidays, movies, bookings, movieShowings);
-        StaffController staffController = new StaffController(movies, bookings, movieShowings, holidays); // not finished
+        MovieGoerController movieGoerController = MovieGoerController.getInstance();
+        movieGoerController.initialize(holidays, movies, bookings, movieShowings);
 
-        // construct boundaries from controls
-        MovieGoerInterface movieGoerInterface = new MovieGoerInterface(movieGoerController);
-        StaffInterface staffInterface = new StaffInterface(staffController);
-
-        // construct main interface
-        UserInterface userInterface = new UserInterface(movieGoerInterface, staffInterface);
+        StaffController staffController = StaffController.getInstance();
+        staffController.initialize(movies, bookings, movieShowings, holidays);
 
         // start interaction
-        userInterface.start();
+        UserInterface.getInstance().start();
 
         // save entities into json files
         fileManager.saveMovieInfo(movies, movieInfoPath, gson);

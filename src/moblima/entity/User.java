@@ -3,21 +3,27 @@ package moblima.entity;
 public class User {
     public enum TypeOfUser {STAFF, MOVIEGOER}
 
+    private static User user = null;
     private TypeOfUser typeOfUser;
     private boolean active;
 
-    public User() {
+    private User() {
         typeOfUser = TypeOfUser.MOVIEGOER;
         active = true;
     }
 
-    public User(TypeOfUser typeOfUser) {
-        this.typeOfUser = typeOfUser;
-        this.active = true;
+    public static User getInstance() {
+        if (user == null) {
+            user = new User();
+        }
+        return user;
     }
 
-    public User(TypeOfUser typeOfUser, boolean active){
+    public void setTypeOfUser(TypeOfUser typeOfUser) {
         this.typeOfUser = typeOfUser;
+    }
+
+    public void setActive(boolean active) {
         this.active = active;
     }
 

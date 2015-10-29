@@ -3,25 +3,26 @@ package moblima.boundary;
 import moblima.entity.User;
 
 public class UserInterface {
-    private User currentUser;
-    private MovieGoerInterface movieGoerInterface;
-    private StaffInterface staffInterface;
+    private static UserInterface userInterface = null;
 
-    public UserInterface(MovieGoerInterface movieGoerInterface, StaffInterface staffInterface) {
-        this.movieGoerInterface = movieGoerInterface;
-        this.staffInterface = staffInterface;
-        this.currentUser = new User();
+    private UserInterface() {}
+
+    public static UserInterface getInstance() {
+        if (userInterface == null) {
+            userInterface = new UserInterface();
+        }
+        return userInterface;
     }
 
     public void start() {
         System.out.println("Starting MOBLIMA...");
 
         // start interacting with user
-        while (currentUser.isActive()) {
-            if (currentUser.isMovieGoer()) {
-                currentUser = movieGoerInterface.interact();
+        while (User.getInstance().isActive()) {
+            if (User.getInstance().isMovieGoer()) {
+                MovieGoerInterface.getInstance().interact();
             } else {
-                currentUser = staffInterface.interact();
+                StaffInterface.getInstance().interact();
             }
         }
 

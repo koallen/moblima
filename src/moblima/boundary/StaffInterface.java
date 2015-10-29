@@ -2,6 +2,7 @@ package moblima.boundary;
 
 import java.util.*;
 import moblima.entity.User;
+import moblima.entity.User.TypeOfUser;
 import moblima.entity.Review;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
@@ -11,12 +12,21 @@ import moblima.control.StaffController;
 * TODOs: implement update/removeMovieListing, create/update/removeMovieShowing, updateTicketPrice, addHoliday
 */
 public class StaffInterface {
+    private static StaffInterface staffInterface = null;
     private StaffController staffController;
 
-    public StaffInterface(StaffController staffController) {
-        this.staffController = staffController;
+    private StaffInterface() {
+        staffController = StaffController.getInstance();
     }
-    public User interact() {
+
+    public static StaffInterface getInstance() {
+        if (staffInterface == null) {
+            staffInterface = new StaffInterface();
+        }
+        return staffInterface;
+    }
+
+    protected void interact() {
         int choice, index;
         boolean logoutStatus;
         Scanner sc = new Scanner(System.in);
@@ -62,12 +72,13 @@ public class StaffInterface {
             case 11:
                 // done
                 logoutStatus = logout();
-                return new User();
+                User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
+            case 12:
+                User.getInstance().setActive(false);
             default:
                 System.out.println("Wrong input, please try again");
                 break;
         }
-        return new User(User.TypeOfUser.STAFF);
     }
 
     private void print() {
@@ -84,7 +95,8 @@ public class StaffInterface {
         "8. List Top 5 movies by overall rating\n" +
         "9. Change movie base price\n" +
         "10. Add holiday\n" +
-        "11. Logout\n"
+        "11. Logout\n" +
+        "12. Exit\n"
         );
     }
 

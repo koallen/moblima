@@ -10,12 +10,27 @@ import moblima.entity.MovieTicket;
 import moblima.entity.MovieShowing;
 
 public class MovieGoerController {
+    private static MovieGoerController movieGoerController = null;
     private List<Date> holidays;
     private List<MovieInfo> movies;
     private List<Booking> bookings;
     private List<MovieShowing> movieShowings;
 
-    public MovieGoerController(ArrayList<Date> holidays, ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings) {
+    private MovieGoerController() {
+        this.holidays = null;
+        this.movies = null;
+        this.bookings = null;
+        this.movieShowings = null;
+    }
+
+    public static MovieGoerController getInstance() {
+        if (movieGoerController == null) {
+            movieGoerController = new MovieGoerController();
+        }
+        return movieGoerController;
+    }
+
+    public void initialize(ArrayList<Date> holidays, ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings) {
         this.holidays = holidays;
         this.movies = movies;
         this.bookings = bookings;

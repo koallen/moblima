@@ -2,6 +2,7 @@ package moblima.boundary;
 
 import java.util.Scanner;
 import moblima.entity.User;
+import moblima.entity.User.TypeOfUser;
 import moblima.entity.Seat;
 import moblima.entity.Payment;
 import moblima.entity.MovieInfo;
@@ -10,12 +11,21 @@ import moblima.entity.MovieShowing;
 import moblima.control.MovieGoerController;
 
 public class MovieGoerInterface {
+    private static MovieGoerInterface movieGoerInterface = null;
     private MovieGoerController movieGoerController;
 
-    public MovieGoerInterface(MovieGoerController movieGoerController){
-        this.movieGoerController = movieGoerController;
+    private MovieGoerInterface(){
+        movieGoerController = MovieGoerController.getInstance();
     }
-    public User interact() {
+
+    public static MovieGoerInterface getInstance() {
+        if (movieGoerInterface == null) {
+            movieGoerInterface = new MovieGoerInterface();
+        }
+        return movieGoerInterface;
+    }
+
+    protected void interact() {
         int choice;
         String movieName, movieGoerName, bookingId;
         MovieInfo moveInfo;
@@ -49,13 +59,13 @@ public class MovieGoerInterface {
                 MovieInfo movie = movieGoerController.search(movieName);
                 movieGoerController.createMovieReview(movie);
                 break;
+            case 6:
+                User.getInstance().setActive(false);
             default:
                 break;
         }
-
-        return new User();
     }
-    public void bookingProcedure(){
+    private void bookingProcedure(){
         String movieName, movieGoerName, bookingId;
         MovieInfo moveInfo;
         MovieShowing movieShowing;
@@ -94,7 +104,7 @@ public class MovieGoerInterface {
                     }
                 }
     }
-    public void print() {
+    private void print() {
         System.out.print(
         "===============Menu=============\n" +
         "Please select your choice below:\n" +

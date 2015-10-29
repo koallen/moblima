@@ -13,6 +13,7 @@ public class StaffController {
     public enum LoginFeedback {WRONGUSERNAMEPASSWORD, ALREADYLOGGEDIN, LOGINSUCCESS}
     public enum LogoutFeedback {ALREADYLOGGEDOUT, LOGOUTSUCCESS}
 
+    private static StaffController staffController = null;
     private List<MovieInfo> movies;
     private List<Booking> bookings;
     private List<MovieShowing> movieShowings;
@@ -22,14 +23,28 @@ public class StaffController {
     private static final String staffUsername = "moblima";
     private static final String staffPassword = "imStaff";
 
-    public StaffController(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings, ArrayList<Date> holidays) {
+    private StaffController() {
+        this.movies = null;
+        this.bookings = null;
+        this.movieShowings = null;
+        this.holidays = null;
+        this.loggedIn = false;
+    }
+
+    public static StaffController getInstance() {
+        if (staffController == null) {
+            staffController = new StaffController();
+        }
+        return staffController;
+    }
+
+    public void initialize(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings, ArrayList<Date> holidays) {
         this.movies = movies;
         this.bookings = bookings;
         this.movieShowings = movieShowings;
         this.holidays = holidays;
-        this.loggedIn = false;
     }
-
+    
     public ArrayList<MovieInfo> listAllMovies() {
         return (ArrayList<MovieInfo>)movies;
     }

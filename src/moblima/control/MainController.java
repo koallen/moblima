@@ -28,12 +28,9 @@ public class MainController {
         ArrayList<Booking> bookings = fileManager.loadBooking(bookingPath, gson);
         ArrayList<Date> holidays = null;
 
-        // construct controls from entities
-        MovieGoerController movieGoerController = MovieGoerController.getInstance();
-        movieGoerController.initialize(holidays, movies, bookings, movieShowings);
-
-        StaffController staffController = StaffController.getInstance();
-        staffController.initialize(movies, bookings, movieShowings, holidays);
+        // initialize controls
+        MovieGoerController.getInstance().initialize(holidays, movies, bookings, movieShowings);
+        StaffController.getInstance().initialize(movies, bookings, movieShowings, holidays);
 
         // start interaction
         UserInterface.getInstance().start();

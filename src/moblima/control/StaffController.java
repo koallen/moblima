@@ -44,7 +44,7 @@ public class StaffController {
         this.movieShowings = movieShowings;
         this.holidays = holidays;
     }
-    
+
     public ArrayList<MovieInfo> listAllMovies() {
         return (ArrayList<MovieInfo>)movies;
     }
@@ -76,6 +76,7 @@ public class StaffController {
     public LoginFeedback login(String username, String password) {
         if (!loggedIn) {
             if (username.equals(staffUsername) && password.equals(staffPassword)) {
+                loggedIn = true;
                 return LoginFeedback.LOGINSUCCESS;
             } else {
                 return LoginFeedback.WRONGUSERNAMEPASSWORD;
@@ -87,6 +88,7 @@ public class StaffController {
 
     public LogoutFeedback logout() {
         if (loggedIn) {
+            loggedIn = false;
             return LogoutFeedback.LOGOUTSUCCESS;
         } else {
             return LogoutFeedback.ALREADYLOGGEDOUT;

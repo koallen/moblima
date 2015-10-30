@@ -9,6 +9,8 @@ import moblima.entity.MovieInfo;
 import moblima.entity.MovieTicket;
 import moblima.entity.MovieShowing;
 import moblima.control.MovieGoerController;
+import moblima.control.StaffController;
+import moblima.control.StaffController.LoginFeedback;
 
 public class MovieGoerInterface {
     private static MovieGoerInterface movieGoerInterface = null;
@@ -60,11 +62,29 @@ public class MovieGoerInterface {
                 movieGoerController.createMovieReview(movie);
                 break;
             case 6:
+                loginAsStaff(sc);
+                return;
+            case 7:
                 User.getInstance().setActive(false);
+                return;
             default:
                 break;
         }
     }
+
+    private void print() {
+        System.out.print(
+        "===============Menu=============\n" +
+        "Please select your choice below:\n" +
+        "1. List all movies\n" +
+        "2. Search for movies\n" +
+        "3. Book movie ticket(s)\n" +
+        "4. Check booking history\n" +
+        "5. Add movie review\n"+
+        "6. Staff login\n" +
+        "7. Exit\n");
+    }
+
     private void bookingProcedure(){
         String movieName, movieGoerName, bookingId;
         MovieInfo moveInfo;
@@ -104,15 +124,25 @@ public class MovieGoerInterface {
                     }
                 }
     }
-    private void print() {
-        System.out.print(
-        "===============Menu=============\n" +
-        "Please select your choice below:\n" +
-        "1. List all movies\n" +
-        "2. Search for movies\n" +
-        "3. Book movie ticket(s)\n" +
-        "4. Check booking history\n" +
-        "5. Add movie review\n"+
-        "6. Exit\n");
+
+    private void loginAsStaff(Scanner sc) {
+        String username, password;
+        System.out.print("Input username: ");
+        username = sc.next();
+        System.out.print("Input password: ");
+        password = sc.next();
+        LoginFeedback feedback = StaffController.getInstance().login(username, password);
+        switch (feedback) {
+            case LOGINSUCCESS:
+                User.getInstance().setTypeOfUser(TypeOfUser.STAFF);
+                break;
+            case ALREADYLOGGEDIN:
+                break;
+            case WRONGUSERNAMEPASSWORD:
+                System.out.println("Wrong username or password, please try again");
+                break;
+            default:
+                break;
+        }
     }
 }

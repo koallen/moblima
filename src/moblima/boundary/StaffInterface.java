@@ -7,6 +7,7 @@ import moblima.entity.Review;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
 import moblima.control.StaffController;
+import moblima.control.StaffController.LogoutFeedback;
 
 /**
 * TODOs: implement update/removeMovieListing, create/update/removeMovieShowing, updateTicketPrice, addHoliday
@@ -71,10 +72,11 @@ public class StaffInterface {
                 break;
             case 11:
                 // done
-                logoutStatus = logout();
-                User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
+                logout();
+                break;
             case 12:
                 User.getInstance().setActive(false);
+                break;
             default:
                 System.out.println("Wrong input, please try again");
                 break;
@@ -287,14 +289,13 @@ public class StaffInterface {
         }
     }
 
-    private boolean logout() {
-        StaffController.LogoutFeedback logoutStatus = staffController.logout();
-        if (logoutStatus == StaffController.LogoutFeedback.LOGOUTSUCCESS) {
+    private void logout() {
+        LogoutFeedback feedback = staffController.logout();
+        if (feedback == LogoutFeedback.LOGOUTSUCCESS) {
+            User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
             System.out.println("Logout successful");
-            return true;
         } else {
             System.out.println("You are already logged out");
-            return false;
         }
     }
 }

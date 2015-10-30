@@ -40,11 +40,11 @@ public class MovieGoerController {
         return movieShowings.get(choice);
     }
     public void list(){
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-        for (int count = 0; count < movies.size(); count++){
-            System.out.println("This is the list for all movies");
-            System.out.println(count + ". " + movies.get(count).toString());
+        //Scanner sc = new Scanner(System.in);
+        //int choice = sc.nextInt();
+        System.out.println("This is the list of all movies");
+        for (MovieInfo movie: movies){
+            System.out.println(movies.indexOf(movie) + ". " + movie.toString());
         }
     }
     public MovieShowing listAndChooseShowing(String movieName){

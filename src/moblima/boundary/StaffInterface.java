@@ -1,6 +1,8 @@
 package moblima.boundary;
 
 import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import moblima.entity.User;
 import moblima.entity.User.TypeOfUser;
 import moblima.entity.Review;
@@ -68,7 +70,7 @@ public class StaffInterface {
                 updateTicketPrice(index, sc);
                 break;
             case 10:
-                //addHoliday();
+                addHoliday(sc);
                 break;
             case 11:
                 // done
@@ -296,6 +298,18 @@ public class StaffInterface {
             System.out.println("Logout successful");
         } else {
             System.out.println("You are already logged out");
+        }
+    }
+
+    private void addHoliday(Scanner sc) {
+        Date holiday;
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.print("Please input a holiday date in the format DD/MM/YYYY: ");
+        try {
+            holiday = fmt.parse(sc.next());
+            staffController.createHoliday(holiday);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 }

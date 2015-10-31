@@ -4,7 +4,7 @@
       "title": "The Martian",
       "showingStatus": "NOWSHOWING",
       "typeOfMovie": "THREED",
-      "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
+      "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian��? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
       "director": "Ridley Scoot",
       "casts": [
         "Matt Damon",
@@ -27,24 +27,26 @@
     },
     "cinema": {
       "classOfCinema": "GOLD",
+      "cinemaCode": "XXX",
       "seats": [
         [
           {
-            "seatID": "A1",
-            "status": "NOTTAKEN"
+            "seatID": "A0",
+            "status": "TAKEN"
           }
         ]
       ],
       "cinemaIndex": 1,
       "numberOfEmptySeat": 50,
-      "row": 5,
-      "col": 10
+      "row": 1,
+      "col": 1
     },
     "cineplex": {
       "cineplexName": "Golden Village",
       "cinema": [
         {
           "classOfCinema": "GOLD",
+          "cinemaCode": "XXX",
           "seats": [
             [
               {
@@ -60,6 +62,7 @@
         },
         {
           "classOfCinema": "GOLD",
+          "cinemaCode": "YYY",
           "seats": [
             [
               {
@@ -75,6 +78,7 @@
         },
         {
           "classOfCinema": "GOLD",
+          "cinemaCode": "ZZZ",
           "seats": [
             [
               {

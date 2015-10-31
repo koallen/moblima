@@ -17,16 +17,18 @@ public class MainController {
     private static final String movieInfoPath = "db" + File.separator + "movie_info.json";
     private static final String movieShowingPath = "db" + File.separator + "movie_showing.json";
     private static final String bookingPath = "db" + File.separator + "booking.json";
+    private static final String holidayPath = "db" + File.separator + "holiday.json";
 
     public static void start() {
         // load entities from json files
         FileManager fileManager = FileManager.getInstance();
         Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat("dd/MM/yyyy hh:mm").create();
+        Gson gsonForHoliday = new GsonBuilder().setPrettyPrinting().setDateFormat("dd/MM/yyyy").create();
 
         ArrayList<MovieInfo> movies = fileManager.loadMovieInfo(movieInfoPath, gson);
         ArrayList<MovieShowing> movieShowings = fileManager.loadMovieShowing(movieShowingPath, gson);
         ArrayList<Booking> bookings = fileManager.loadBooking(bookingPath, gson);
-        ArrayList<Date> holidays = null;
+        ArrayList<Date> holidays = fileManager.loadHoliday(holidayPath, gsonForHoliday);
 
         // initialize controls
         MovieGoerController.getInstance().initialize(holidays, movies, bookings, movieShowings);
@@ -39,5 +41,6 @@ public class MainController {
         fileManager.saveMovieInfo(movies, movieInfoPath, gson);
         fileManager.saveMovieShowing(movieShowings, movieShowingPath, gson);
         fileManager.saveBooking(bookings, bookingPath, gson);
+        fileManager.saveHoliday(holidays, holidayPath, gsonForHoliday);
     }
 }

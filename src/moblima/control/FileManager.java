@@ -1,5 +1,6 @@
 package moblima.control;
 
+import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.FileReader;
@@ -57,6 +58,17 @@ public class FileManager {
         return bookings;
     }
 
+    protected ArrayList<Date> loadHoliday(String filename, Gson gson) {
+        ArrayList<Date> holidays = null;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filename));
+            holidays = gson.fromJson(br, new TypeToken<ArrayList<Date>>(){}.getType());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return holidays;
+    }
+
     protected void saveMovieInfo(List<MovieInfo> movies, String filename, Gson gson) {
         String json = gson.toJson(movies);
         try {
@@ -81,6 +93,17 @@ public class FileManager {
 
     protected void saveBooking(List<Booking> bookings, String filename, Gson gson) {
         String json = gson.toJson(bookings);
+        try {
+            FileWriter writer = new FileWriter(filename);
+            writer.write(json);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void saveHoliday(List<Date> holidays, String filename, Gson gson) {
+        String json = gson.toJson(holidays);
         try {
             FileWriter writer = new FileWriter(filename);
             writer.write(json);

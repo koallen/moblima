@@ -36,51 +36,48 @@ public class MovieGoerController {
         this.bookings = bookings;
         this.movieShowings = movieShowings;
     }
+
     public MovieShowing getMovies(int choice){
         return movieShowings.get(choice);
     }
-    public void list(){
-        //Scanner sc = new Scanner(System.in);
-        //int choice = sc.nextInt();
-        System.out.println("This is the list of all movies");
-        for (MovieInfo movie: movies){
-            System.out.println(movies.indexOf(movie) + ". " + movie.toString());
-        }
+
+    public ArrayList<MovieInfo> listAllMovies(){
+        return (ArrayList<MovieInfo>)movies;
     }
-    public MovieShowing listAndChooseShowing(String movieName){
-        List <MovieShowing> tempList = new ArrayList<MovieShowing>();
-        Scanner sc = new Scanner(System.in);
-        for (int count = 0; count < movieShowings.size(); count++) {
-            if (movieShowings.get(count).getMovie().getTitle() == movieName){
-                tempList.add(movieShowings.get(count));
-                movieShowings.get(count).toString();
-            }
-            if(tempList.size() == 0){
-                return null;
-            }
-            else {
-                System.out.println("Please choose the no. of movie showing");
-                int choice = sc.nextInt();
-                return tempList.get(choice);
+
+    public MovieInfo searchForMovie(int index) {
+        return movies.get(index);
+    }
+
+    public ArrayList<MovieShowing> listMovieShowing(MovieInfo movie){
+        ArrayList<MovieShowing> results = new ArrayList<MovieShowing>();
+        for (MovieShowing movieShowing: movieShowings) {
+            if (movieShowing.getMovie().getTitle().equals(movie.getTitle())) {
+                results.add(movieShowing);
             }
         }
-        return null;
+        return results;
     }
+
     public void viewMovieDetail(String movieName){
-        MovieInfo movie = search(movieName);
-        movie.toString();
+        //MovieInfo movie = search(movieName);
+        //movie.toString();
     }
+
     public void printLayout(MovieShowing movieShowing){
         Seat[][] seats = movieShowing.getCinema().getSeatLayout();
-        for (int count = 0; count <= movieShowing.getCinema().getRow(); count++){
-            for(int count1 = 0; count1 <= movieShowing.getCinema().getCol(); count1++){
-                seats[count][count1].toString();
+        for (int i = 0; i < movieShowing.getCinema().getRow(); i++){
+            for(int j = 0; j < movieShowing.getCinema().getCol(); j++){
+                System.out.print(seats[i][j].toString());
             }
-            System.out.print("\n");
+            System.out.println();
         }
     }
+
     public Seat selectSeat(MovieShowing movieShowing, int row, int col){
         Seat[][] seats = movieShowing.getCinema().getSeatLayout();
+        row--;
+        col--;
         if(seats[row][col].getStatus() == Seat.enumSeat.TAKEN) {
             System.out.println("This seat is taken, please choose another one.");
             return null;
@@ -100,10 +97,12 @@ public class MovieGoerController {
             return null;
         }
     }
+
     public void book(MovieTicket movieTicket, Payment payment){
         Booking booking = new Booking(movieTicket, payment);
         bookings.add(booking);
     }
+
     public double calculate(MovieShowing movieShowing){
         double price = 0.0;
         System.out.println("Are you a previliged person? (y/n)");
@@ -125,14 +124,18 @@ public class MovieGoerController {
         }
         return price;
     }
-    public void viewBookingHistory(String userName){
-        for (int count = 0; count < bookings.size(); count++){
-            if (bookings.get(count).getPayment().getName() == userName){
-                bookings.get(count).toString();
+
+    public ArrayList<Booking> getBookingHistory(String userName) {
+        ArrayList<Booking> bookingsByUser = new ArrayList<Booking>();
+        for (Booking booking: bookings){
+            if (booking.getPayment().getName().equals(userName)){
+                bookingsByUser.add(booking);
             }
         }
+        return bookingsByUser;
     }
-    public void createMovieReview(MovieInfo movie){
+
+    public void createMovieReview(MovieInfo movie) {
         System.out.println("Please input the review");
         Scanner sc = new Scanner(System.in);
         String reviewstr = sc.next();
@@ -141,12 +144,14 @@ public class MovieGoerController {
         Review review = new Review(reviewstr,rating);
         movie.getPastReviews().add(review);
     }
-    public MovieInfo search(String movieName){
-        for (int count = 0; count < movies.size(); count++) {
-            if (movies.get(count).getTitle() == movieName){
-                return movies.get(count);
+
+    public ArrayList<MovieInfo> search(String movieName){
+        ArrayList<MovieInfo> searchResult = new ArrayList<MovieInfo>();
+        for (MovieInfo movie: movies) {
+            if (movie.getTitle().toLowerCase().contains(movieName.toLowerCase())){
+                searchResult.add(movie);
             }
         }
-        return null;
+        return searchResult;
     }
 }

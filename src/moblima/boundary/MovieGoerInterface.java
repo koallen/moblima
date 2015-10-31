@@ -1,9 +1,15 @@
 package moblima.boundary;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import moblima.entity.User;
 import moblima.entity.User.TypeOfUser;
 import moblima.entity.Seat;
+import moblima.entity.Review;
+import moblima.entity.Booking;
 import moblima.entity.Payment;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieTicket;
@@ -29,8 +35,8 @@ public class MovieGoerInterface {
 
     protected void interact() {
         int choice;
-        String movieName, movieGoerName, bookingId;
-        MovieInfo moveInfo;
+        String movieName, bookingId;
+        MovieInfo movieInfo;
         MovieShowing movieShowing;
 
 
@@ -40,31 +46,30 @@ public class MovieGoerInterface {
         choice = sc.nextInt();
         switch (choice) {
             case 1:
-                movieGoerController.list();
+                // done
+                listAllMovies();
                 break;
             case 2:
-                System.out.print("Please input the movie name to search: ");
-                movieName = sc.next();
-                movieGoerController.search(movieName);
+                // done
+                searchMovies(sc);
                 break;
             case 3:
-                bookingProcedure();
+                bookAMovie(sc);
                 break;
             case 4:
-                System.out.print("Please input your name: ");
-                movieGoerName = sc.next();
-                movieGoerController.viewBookingHistory(movieGoerName);
+                // done
+                viewBookingHistory(sc);
                 break;
             case 5:
-                System.out.print("Please input the movie name: ");
-                movieName = sc.next();
-                MovieInfo movie = movieGoerController.search(movieName);
-                movieGoerController.createMovieReview(movie);
+                // done
+                addReview(sc);
                 break;
             case 6:
+                // done
                 loginAsStaff(sc);
                 return;
             case 7:
+                // done
                 User.getInstance().setActive(false);
                 return;
             default:
@@ -85,52 +90,68 @@ public class MovieGoerInterface {
         "7. Exit\n");
     }
 
-    private void bookingProcedure(){
+    private void bookAMovie(Scanner sc){
         String movieName, movieGoerName, bookingId;
-        MovieInfo moveInfo;
+        int index;
+        MovieInfo movieToBook;
         MovieShowing movieShowing;
+        List<MovieInfo> searchResult;
+        List<MovieShowing> movieShowings;
 
-
-        Scanner sc = new Scanner(System.in);
-        while (true){
-                    System.out.println("Please input the name of the movie that you want to book");
-                    movieName = sc.next();
-                    movieGoerController.viewMovieDetail(movieName);
-                    System.out.println("Do you want to book this movie? (y/n)");
-                    char choice1 = sc.next().charAt(0);
-                    if(choice1 == 'y') {
-                        movieShowing = movieGoerController.listAndChooseShowing(movieName);
-                        movieGoerController.printLayout(movieShowing);
-                        System.out.println("Which seat do you want?");
-                        System.out.println("Input row:");
-                        int row = sc.nextInt();
-                        System.out.println("Input col:");
-                        int col = sc.nextInt();
-                        Seat seat = movieGoerController.selectSeat(movieShowing, row, col);
-                        double price = movieGoerController.calculate(movieShowing);
-                        MovieTicket movieTicket = new MovieTicket(movieShowing, seat, price);
-                        System.out.println("Please input your name: ");
-                        String name = sc.next();
-                        System.out.println("Please input your mobile number: ");
-                        String mobileNumber = sc.next();
-                        System.out.println("Please input your email address: ");
-                        String email = sc.next();
-                        String transactionID = null;
-                        Payment payment = new Payment(transactionID, name, mobileNumber, email, price);
-                        movieGoerController.book(movieTicket, payment);
-                    }
-                    else {
-                        continue;
-                    }
+        while (true) {
+            System.out.print("Please input the name of the movie that you want to book: ");
+            movieName = sc.next();
+            searchResult = movieGoerController.search(movieName);
+            if (searchResult.size() != 0) {
+                for (MovieInfo movie: searchResult) {
+                    System.out.println(searchResult.indexOf(movie) + ". " + movie.getTitle());
                 }
+                break;
+            } else {
+                System.out.println("No matching movie found!");
+                continue;
+            }
+        }
+        System.out.print("Input the movie id that you want to book: ");
+        index = sc.nextInt();
+        movieToBook = movieGoerController.searchForMovie(index);
+        movieShowings = movieGoerController.listMovieShowing(movieToBook);
+        for (MovieShowing show: movieShowings) {
+            System.out.println(movieShowings.indexOf(show) + show.toString());
+        }
+        System.out.print("Input the showing id that you want to book: ");
+        index = sc.nextInt();
+        movieShowing = movieShowings.get(index);
+        movieGoerController.printLayout(movieShowing);
+        System.out.println("Which seat do you want?");
+        System.out.println("Input row:");
+        int row = sc.nextInt();
+        System.out.println("Input col:");
+        int col = sc.nextInt();
+        Seat seat = movieGoerController.selectSeat(movieShowing, row, col);
+        double price = movieGoerController.calculate(movieShowing);
+        MovieTicket movieTicket = new MovieTicket(movieShowing, seat, price);
+        System.out.println("Please input your name: ");
+        String name = sc.next();
+        System.out.println("Please input your mobile number: ");
+        String mobileNumber = sc.next();
+        System.out.println("Please input your email address: ");
+        String email = sc.next();
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddhhmm");
+        String transactionID = movieShowing.getCinema().getCinemaCode() + fmt.format(new Date());
+        Payment payment = new Payment(transactionID, name, mobileNumber, email, price);
+        movieGoerController.book(movieTicket, payment);
+        System.out.println("Booking is successful\n");
     }
 
     private void loginAsStaff(Scanner sc) {
         String username, password;
+
         System.out.print("Input username: ");
         username = sc.next();
         System.out.print("Input password: ");
         password = sc.next();
+
         LoginFeedback feedback = StaffController.getInstance().login(username, password);
         switch (feedback) {
             case LOGINSUCCESS:
@@ -144,5 +165,70 @@ public class MovieGoerInterface {
             default:
                 break;
         }
+    }
+
+    private void viewBookingHistory(Scanner sc) {
+        String movieGoerName;
+
+        System.out.print("Please input your name: ");
+        movieGoerName = sc.next();
+
+        ArrayList<Booking> bookingsByUser = movieGoerController.getBookingHistory(movieGoerName);
+        if (bookingsByUser.size() != 0) {
+            System.out.println("Here are your bookings:\n");
+            for (Booking booking: bookingsByUser) {
+                System.out.println(bookingsByUser.indexOf(booking) + ".\n" + booking.toString());
+            }
+        } else {
+            System.out.println("No booking record found");
+        }
+
+    }
+
+    private void listAllMovies() {
+        ArrayList<MovieInfo> movies = movieGoerController.listAllMovies();
+        System.out.println("This is the list of all movies\n");
+        for (MovieInfo movie: movies){
+            System.out.println(movies.indexOf(movie) + ".\n" + movie.toString() + "\n");
+        }
+    }
+
+    private ArrayList<MovieInfo> searchMovies(Scanner sc) {
+        ArrayList<MovieInfo> searchResult;
+        String movieName;
+
+        System.out.print("Please input the movie name: ");
+        movieName = sc.next();
+        searchResult = movieGoerController.search(movieName);
+
+        if (searchResult.size() != 0) {
+            System.out.println("Search result:\n");
+            for (MovieInfo movie: searchResult) {
+                System.out.println(searchResult.indexOf(movie) + ".\n" + movie.getTitle() + "\n");
+            }
+        } else {
+            System.out.println("No matching movie found!");
+        }
+
+        return searchResult;
+    }
+
+    private void addReview(Scanner sc) {
+        List<MovieInfo> results = searchMovies(sc);
+        int index, rating;
+        String content;
+
+        System.out.print("Please input the movie id: ");
+        index = sc.nextInt();
+        System.out.println("Please input review content:");
+        content = sc.next();
+        sc.nextLine();
+        System.out.print("Please input review rating: ");
+        rating = sc.nextInt();
+
+        Review viewerReview = new Review(content, rating);
+        results.get(index).addReview(viewerReview);
+
+        System.out.println("Review successfully added\n");
     }
 }

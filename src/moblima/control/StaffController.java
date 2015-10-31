@@ -7,7 +7,7 @@ import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
 
 /**
-* TODOs: add a search function
+* 
 */
 public class StaffController {
     public enum LoginFeedback {WRONGUSERNAMEPASSWORD, ALREADYLOGGEDIN, LOGINSUCCESS}

@@ -44,7 +44,11 @@ public class Cineplex{
 	public Cinema getCinema(int cinemaID) {
 		return cinema[cinemaID];
 	}
-
+	/**
+     * Gets the string representation 
+     * for the name of this cineplex
+     * @return string representation of cineplex name
+     */
 	public String toString() {
 		return cineplexName;
 	}

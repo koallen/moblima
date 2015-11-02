@@ -1,0 +1,55 @@
+[
+  {
+    "cineplexName": "Golden Village",
+    "cinema": [
+      {
+        "classOfCinema": "GOLD",
+        "cinemaCode": "XXX",
+        "seats": [
+          [
+            {
+              "seatID": "A1",
+              "status": "NOTTAKEN"
+            }
+          ]
+        ],
+      "cinemaIndex": 1,
+      "numberOfEmptySeat": 1,
+      "row": 1,
+      "col": 1
+      },
+      {
+        "classOfCinema": "GOLD",
+        "cinemaCode": "YYY",
+        "seats": [
+          [
+            {
+              "seatID": "A1",
+              "status": "NOTTAKEN"
+            }
+          ]
+        ],
+        "cinemaIndex": 2,
+        "numberOfEmptySeat": 1,
+        "row": 1,
+        "col": 1
+      },
+      {
+        "classOfCinema": "GOLD",
+        "cinemaCode": "ZZZ",
+        "seats": [
+          [
+            {
+              "seatID": "A1",
+              "status": "NOTTAKEN"
+            }
+          ]
+        ],
+        "cinemaIndex": 3,
+        "numberOfEmptySeat": 1,
+        "row": 1,
+        "col": 1
+      }
+    ]
+  }
+]

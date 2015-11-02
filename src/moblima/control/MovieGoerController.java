@@ -49,6 +49,10 @@ public class MovieGoerController {
         return movies.get(index);
     }
 
+    public MovieShowing searchForMovieShowing(int index) {
+        return movieShowings.get(index);
+    }
+
     public ArrayList<MovieShowing> listMovieShowing(MovieInfo movie){
         ArrayList<MovieShowing> results = new ArrayList<MovieShowing>();
         for (MovieShowing movieShowing: movieShowings) {

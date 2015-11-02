@@ -29,18 +29,6 @@ public class MovieShowing {
     private Date showTime;
     /**
      * Create a new movie which is showing in a cinema
-     * without any information given about this movie
-     * The movie information, cinema, cineplex, and show time
-     * are all set to null as default.
-     */
-    public MovieShowing() {
-        this.movie = null;
-        this.cinema = null;
-        this.cineplex = null;
-        this.showTime = null;
-    }
-    /**
-     * Create a new movie which is showing in a cinema
      * with given intruduction information about this movie,
      * the cinema where the movie is showing at,
      * the cineplex where the movie is showing at and
@@ -85,5 +73,12 @@ public class MovieShowing {
      */
     public Date getShowTime() {
         return showTime;
+    }
+    /**
+     * Sets a new showing time for the showing movie
+     * @param showTime The new showing time for the showing movie
+     */
+    public void setShowTime(Date showTime) {
+        this.showTime = showTime;
     }
 }

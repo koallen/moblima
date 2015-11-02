@@ -2,7 +2,7 @@ package moblima.entity;
 
 /**
  * Represents a Seat in the cinema
- * Contains information of seat ID and 
+ * Contains information of seat ID and
  * its status
  * @author SSP2 Team 1
  */
@@ -57,7 +57,7 @@ public class Seat {
      * Changes the status of this Seat
      * @param status The new status of this Seat
      */
-    public void setStatus(enumSeat status){
+    public void setStatus(enumSeat status) {
         this.status = status;
     }
     /**
@@ -65,9 +65,13 @@ public class Seat {
      * @param row The row number of this Seat in cinema
      * @param col The colume number of this Seat in cinema
      */
-    public void setID(int row, int col){
+    public void setID(int row, int col) {
         char base = 'A';
         char letterRow = (char)((int)base + row);
         this.seatID = letterRow + "" + col;
+    }
+
+    public String getSeatID() {
+        return seatID;
     }
 }

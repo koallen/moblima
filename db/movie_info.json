@@ -1,5 +1,30 @@
 [
   {
+    "title": "Burnt",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "THREED",
+    "synopsis": "Chef Adam Jones (Bradley Cooper) had it all—and lost it. A two-star Michelin rockstar with the bad habits to match, the former enfant terrible of the Paris restaurant scene did everything different every time out, and only ever cared about the thrill of creating explosions of taste. To land his own kitchen and that third elusive Michelin star though, he’ll need the best of the best on his side, including the beautiful Helene (Sienna Miller). Burnt is a remarkably funny and emotional story about the love of food, the love between two people, and the power of second chances.",
+    "director": "John Wells",
+    "casts": [
+      "Bradley Cooper",
+      "Sienna Miller"
+    ],
+    "overallRating": 4.0,
+    "pastReviews": [
+      {
+        "content": "This is very good",
+        "rating": 5
+      },
+      {
+        "content": "Interesting",
+        "rating": 3
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "NC16",
+    "sale": 5
+  },
+  {
     "title": "The Martian",
     "showingStatus": "NOWSHOWING",
     "typeOfMovie": "THREED",
@@ -29,28 +54,28 @@
     "sale": 35
   },
   {
-    "title": "Burnt",
-    "showingStatus": "NOWSHOWING",
+    "title": "test movie title",
+    "showingStatus": "COMINGSOON",
     "typeOfMovie": "THREED",
-    "synopsis": "Chef Adam Jones (Bradley Cooper) had it all—and lost it. A two-star Michelin rockstar with the bad habits to match, the former enfant terrible of the Paris restaurant scene did everything different every time out, and only ever cared about the thrill of creating explosions of taste. To land his own kitchen and that third elusive Michelin star though, he’ll need the best of the best on his side, including the beautiful Helene (Sienna Miller). Burnt is a remarkably funny and emotional story about the love of food, the love between two people, and the power of second chances.",
-    "director": "John Wells",
+    "synopsis": "test synopsis",
+    "director": "test director",
     "casts": [
-      "Bradley Cooper",
-      "Sienna Miller"
+      "test cast 0",
+      "test cast 1"
     ],
-    "overallRating": 4.0,
+    "overallRating": 3.0,
     "pastReviews": [
       {
-        "content": "This is very good",
-        "rating": 5
+        "content": "test review content 0",
+        "rating": 2
       },
       {
-        "content": "Interesting",
-        "rating": 3
+        "content": "",
+        "rating": 4
       }
     ],
     "basePrice": 12.0,
-    "rating": "NC16",
-    "sale": 5
+    "rating": "PG13",
+    "sale": 0
   }
 ]

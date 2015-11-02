@@ -6,6 +6,8 @@ import java.text.ParseException;
 import moblima.entity.User;
 import moblima.entity.User.TypeOfUser;
 import moblima.entity.Review;
+import moblima.entity.Cinema;
+import moblima.entity.Cineplex;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
 import moblima.control.StaffController;
@@ -49,9 +51,11 @@ public class StaffInterface {
                 removeMovieListing(index); // done
                 break;
             case 4:
+                // done
                 createMovieShowing(sc);
                 break;
             case 5:
+                // done
                 updateMovieShowing(sc);
                 break;
             case 6:
@@ -70,6 +74,7 @@ public class StaffInterface {
                 updateTicketPrice(index, sc);
                 break;
             case 10:
+                // done
                 addHoliday(sc);
                 break;
             case 11:
@@ -77,6 +82,7 @@ public class StaffInterface {
                 logout();
                 break;
             case 12:
+                // done
                 User.getInstance().setActive(false);
                 break;
             default:
@@ -115,8 +121,9 @@ public class StaffInterface {
         List<Review> pastReviews;
         MovieInfo.Rating rating;
 
+        sc.nextLine();
         System.out.print("Movie title: ");
-        title = sc.next();
+        title = sc.nextLine();
 
         System.out.print(
         "Showing status:\n" +
@@ -133,26 +140,30 @@ public class StaffInterface {
         "Please enter one of the above: ");
         typeOfMovie = MovieInfo.TypeOfMovie.valueOf(sc.next().toUpperCase());
 
+        sc.nextLine();
         System.out.print("Synopsis: ");
-        synopsis = sc.next();
+        synopsis = sc.nextLine();
 
         System.out.print("Director: ");
-        director = sc.next();
+        director = sc.nextLine();
 
         System.out.print("Number of casts: ");
         count = sc.nextInt();
         casts = new String[count];
+        sc.nextLine();
         for (i=0; i<count; ++i) {
             System.out.print("Cast " + i + ": ");
-            casts[i] = sc.next();
+            casts[i] = sc.nextLine();
         }
 
         System.out.print("Number of past reviews: ");
         count = sc.nextInt();
         pastReviews = new ArrayList<Review>();
         for (i=0; i<count; ++i) {
+            sc.nextLine();
+            System.out.println("Review" + i + ". ");
             System.out.print("Content of review: ");
-            reviewContent = sc.next();
+            reviewContent = sc.nextLine();
             System.out.print("Rating: ");
             reviewRating = sc.nextInt();
             pastReviews.add(new Review(reviewContent, reviewRating));
@@ -169,6 +180,7 @@ public class StaffInterface {
 
         movie = new MovieInfo(title, showingStatus, typeOfMovie, synopsis, director, casts, 0.0, (ArrayList<Review>)pastReviews, basePrice, rating, 0);
         staffController.calculateOverallRating(movie);
+        staffController.createMovieListing(movie);
 
         System.out.println("Movie listing created");
     }
@@ -229,11 +241,57 @@ public class StaffInterface {
     }
 
     private void createMovieShowing(Scanner sc) {
+        MovieInfo movie;
+        Cinema cinema;
+        Cineplex cineplex;
+        String showTimeString;
+        Date showTime = null;
+        int index;
 
+        System.out.println("Choose a movie first");
+        index = listAndSelectMovie(sc);
+        movie = staffController.searchForMovie(index);
+
+        index = listAndSelectCineplex(sc);
+        cineplex = staffController.searchForCineplex(index);
+
+        index = listAndSelectCinema(sc);
+        cinema = staffController.searchForCinema(index);
+
+        sc.nextLine();
+        System.out.print("Input showtime in format DD/MM/YYYY HH:MM: ");
+        showTimeString = sc.nextLine();
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+        try {
+            showTime = fmt.parse(showTimeString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        MovieShowing movieShowingToAdd = new MovieShowing(movie, cinema, cineplex, showTime);
+        staffController.createMovieShowing(movieShowingToAdd);
     }
 
     private void updateMovieShowing(Scanner sc) {
+        String newShowTimeString;
+        Date newShowTime = null;
+        MovieShowing movieShowingToUpdate;
 
+        System.out.println("Choose the movie showing to update");
+        int index = listAndSelectMovieShowing(sc);
+        movieShowingToUpdate = staffController.searchForMovieShowing(index);
+
+        sc.nextLine();
+        System.out.print("Input the new show time in format DD/MM/YYYY HH:MM: ");
+        newShowTimeString = sc.nextLine();
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+        try {
+            newShowTime = fmt.parse(newShowTimeString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        staffController.updateMovieShowing(newShowTime, movieShowingToUpdate);
     }
 
     private void removeMovieShowing(int index) {
@@ -271,6 +329,30 @@ public class StaffInterface {
             System.out.println(movieShowings.indexOf(movieShowing) + ". " + movieShowing.toString());
         }
         System.out.print("Please input id of the movie showing: ");
+        index = sc.nextInt();
+        return index;
+    }
+
+    private int listAndSelectCinema(Scanner sc) {
+        List<Cinema> cinemas = staffController.listAllCinemas();
+        int index;
+
+        for (Cinema cinema: cinemas) {
+            System.out.println(cinemas.indexOf(cinema) + ". " + cinema.toString());
+        }
+        System.out.print("Please input id of the cinema: ");
+        index = sc.nextInt();
+        return index;
+    }
+
+    private int listAndSelectCineplex(Scanner sc) {
+        List<Cineplex> cineplexes = staffController.listAllCineplexes();
+        int index;
+
+        for (Cineplex cineplex: cineplexes) {
+            System.out.println(cineplexes.indexOf(cineplex) + ". " + cineplex.toString());
+        }
+        System.out.print("Please input id of the cineplex: ");
         index = sc.nextInt();
         return index;
     }

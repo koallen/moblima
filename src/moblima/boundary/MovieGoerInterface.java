@@ -97,6 +97,7 @@ public class MovieGoerInterface {
         MovieShowing movieShowing;
         List<MovieInfo> searchResult;
         List<MovieShowing> movieShowings;
+        Seat seat;
 
         while (true) {
             System.out.print("Please input the name of the movie that you want to book: ");
@@ -112,27 +113,57 @@ public class MovieGoerInterface {
                 continue;
             }
         }
-        System.out.print("Input the movie id that you want to book: ");
-        index = sc.nextInt();
-        movieToBook = movieGoerController.searchForMovie(index);
-        movieShowings = movieGoerController.listMovieShowing(movieToBook);
-        for (MovieShowing show: movieShowings) {
-            System.out.println(movieShowings.indexOf(show) + show.toString());
+
+        while (true) {
+            System.out.print("Input the movie id that you want to book: ");
+            index = sc.nextInt();
+            if (index >= searchResult.size()) {
+                System.out.println("Wrong index!");
+            } else {
+                break;
+            }
         }
-        System.out.print("Input the showing id that you want to book: ");
-        index = sc.nextInt();
+
+        movieToBook = searchResult.get(index);
+        movieShowings = movieGoerController.listMovieShowing(movieToBook);
+        if (movieShowings.size() == 0) {
+            System.out.println("The movie isn't showing now");
+            return;
+        }
+        for (MovieShowing show: movieShowings) {
+            System.out.println(movieShowings.indexOf(show) + ".\n" + show.toString());
+        }
+
+        while (true) {
+            System.out.print("Input the showing id that you want to book: ");
+            index = sc.nextInt();
+            if (index >= movieShowings.size()) {
+                System.out.println("Wrong index!");
+            } else {
+                break;
+            }
+        }
+
         movieShowing = movieShowings.get(index);
         movieGoerController.printLayout(movieShowing);
-        System.out.println("Which seat do you want?");
-        System.out.println("Input row:");
-        int row = sc.nextInt();
-        System.out.println("Input col:");
-        int col = sc.nextInt();
-        Seat seat = movieGoerController.selectSeat(movieShowing, row, col);
+
+        while (true) {
+            System.out.println("Which seat do you want?");
+            System.out.println("Input row:");
+            int row = sc.nextInt();
+            System.out.println("Input col:");
+            int col = sc.nextInt();
+            seat = movieGoerController.selectSeat(movieShowing, row, col);
+            if (seat != null) {
+                break;
+            }
+        }
+
         double price = movieGoerController.calculate(movieShowing);
         MovieTicket movieTicket = new MovieTicket(movieShowing, seat, price);
+        sc.nextLine();
         System.out.println("Please input your name: ");
-        String name = sc.next();
+        String name = sc.nextLine();
         System.out.println("Please input your mobile number: ");
         String mobileNumber = sc.next();
         System.out.println("Please input your email address: ");

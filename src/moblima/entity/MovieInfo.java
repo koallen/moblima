@@ -196,7 +196,10 @@ public class MovieInfo implements Cloneable {
     public List<Review> getPastReviews() {
         return pastReviews;
     }
-
+    /**
+     * Add new reviews for this movie
+     * @param viewerReview
+     */
     public void addReview(Review viewerReview) {
         pastReviews.add(viewerReview);
     }

@@ -1,1 +1,4 @@
-1. Use getInstance() to get controllers in interfaces
+Date format
+Booking history seat display
+nextLine()
+index translation

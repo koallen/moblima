@@ -32,6 +32,11 @@ public class Payment {
      * transactionID of this Payment,
      * name, mobile number and email of payer, and
      * amount of this payment
+     * @param transactionID The transactionID of this Payment
+     * @param mobileNumber The mobile number of the payer
+     * @param name The name of the payer
+     * @param email The email of the payer
+     * @param paymentAmount The paymentAmount of this payment
      */
     public Payment(String transactionID, String name, String mobileNumber, String email, double paymentAmount) {
         this.transactionID = transactionID;
@@ -75,7 +80,11 @@ public class Payment {
     public double getPaymentAmount() {
         return paymentAmount;
     }
-
+    /**
+     * Gets the string representation 
+     * for all the infomation about this payment
+     * @return string representation about this payment
+     */
     public String toString() {
         return "TransactionID: " + transactionID + "\nName: " + name + "\nMobile Number: " + mobileNumber + "\nEmail: " + email + "\nPayment amount: " + paymentAmount + "SGD";
     }

@@ -34,6 +34,6 @@ public class MovieTicket {
      * @return Gets the string representation of this movie ticket
      */
     public String toString() {
-        return movieShowing.toString() + "\nTicket price: " + price + "SGD" + "\nSeat: " + seat.toString();
+        return movieShowing.toString() + "\nTicket price: " + price + "SGD" + "\nSeat: " + seat.getSeatID();
     }
 }

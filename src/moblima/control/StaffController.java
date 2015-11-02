@@ -3,11 +3,13 @@ package moblima.control;
 import java.util.*;
 import moblima.entity.Review;
 import moblima.entity.Booking;
+import moblima.entity.Cinema;
+import moblima.entity.Cineplex;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
 
 /**
-* 
+*
 */
 public class StaffController {
     public enum LoginFeedback {WRONGUSERNAMEPASSWORD, ALREADYLOGGEDIN, LOGINSUCCESS}
@@ -18,6 +20,8 @@ public class StaffController {
     private List<Booking> bookings;
     private List<MovieShowing> movieShowings;
     private List<Date> holidays;
+    private List<Cinema> cinemas;
+    private List<Cineplex> cineplexes;
     private boolean loggedIn;
     // define some constants
     private static final String staffUsername = "moblima";
@@ -28,6 +32,8 @@ public class StaffController {
         this.bookings = null;
         this.movieShowings = null;
         this.holidays = null;
+        this.cinemas = null;
+        this.cineplexes = null;
         this.loggedIn = false;
     }
 
@@ -38,11 +44,13 @@ public class StaffController {
         return staffController;
     }
 
-    public void initialize(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings, ArrayList<Date> holidays) {
+    public void initialize(ArrayList<MovieInfo> movies, ArrayList<Booking> bookings, ArrayList<MovieShowing> movieShowings, ArrayList<Date> holidays, ArrayList<Cinema> cinemas, ArrayList<Cineplex> cineplexes) {
         this.movies = movies;
         this.bookings = bookings;
         this.movieShowings = movieShowings;
         this.holidays = holidays;
+        this.cinemas = cinemas;
+        this.cineplexes = cineplexes;
     }
 
     public ArrayList<MovieInfo> listAllMovies() {
@@ -53,12 +61,28 @@ public class StaffController {
         return (ArrayList<MovieShowing>)movieShowings;
     }
 
+    public ArrayList<Cinema> listAllCinemas() {
+        return (ArrayList<Cinema>)cinemas;
+    }
+
+    public ArrayList<Cineplex> listAllCineplexes() {
+        return (ArrayList<Cineplex>)cineplexes;
+    }
+
     public MovieInfo searchForMovie(int index) {
         return movies.get(index);
     }
 
     public MovieShowing searchForMovieShowing(int index) {
         return movieShowings.get(index);
+    }
+
+    public Cinema searchForCinema(int index) {
+        return cinemas.get(index);
+    }
+
+    public Cineplex searchForCineplex(int index) {
+        return cineplexes.get(index);
     }
 
     public void updateShowingStatus(MovieInfo movieToUpdate, MovieInfo.ShowingStatus showingStatus) {
@@ -119,9 +143,8 @@ public class StaffController {
         movieShowings.add(movieShowing);
     }
 
-    public void updateMovieShowing(MovieShowing oldMovieShowing, MovieShowing newMovieShowing) {
-        int index = movieShowings.indexOf(oldMovieShowing);
-        movieShowings.set(index, newMovieShowing);
+    public void updateMovieShowing(Date newShowTime, MovieShowing movieShowingToUpdate) {
+        movieShowingToUpdate.setShowTime(newShowTime);
     }
 
     public void removeMovieShowing(MovieShowing movieShowing) {
@@ -149,7 +172,11 @@ public class StaffController {
             }
         });
 
-        return (ArrayList<MovieInfo>)movies.subList(movies.size()-5, movies.size());
+        if (movies.size() < 5) {
+            return (ArrayList<MovieInfo>)movies;
+        } else {
+            return (ArrayList<MovieInfo>)movies.subList(movies.size()-5, movies.size());
+        }
     }
 
     public ArrayList<MovieInfo> getTop5ByRating() {
@@ -160,7 +187,11 @@ public class StaffController {
             }
         });
 
-        return (ArrayList<MovieInfo>)movies.subList(movies.size()-5, movies.size());
+        if (movies.size() < 5) {
+            return (ArrayList<MovieInfo>)movies;
+        } else {
+            return (ArrayList<MovieInfo>)movies.subList(movies.size()-5, movies.size());
+        }
     }
 
     public void calculateOverallRating(MovieInfo movie) {

@@ -138,9 +138,9 @@ public class Cinema {
 		return col;
 	}
 	/**
-     * Gets the string representation 
+     * Gets the string representation
      * for the cinema code of this cinema
-     * @return string representation of cinema code 
+     * @return string representation of cinema code
      */
     public String toString() {
         return cinemaCode;

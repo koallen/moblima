@@ -1,5 +1,17 @@
 package moblima.boundary;
 
+/**
+ * Represent a staff interface
+ * This interface allow user to
+ * create/update/remove movie listing
+ * creat/update/remove cinema showtime
+ * list top 5 by sale/rating
+ * change movie base price
+ * add holiday
+ * logout
+ * @author SSP2 Team 1
+ */
+
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
@@ -13,17 +25,32 @@ import moblima.entity.MovieShowing;
 import moblima.control.StaffController;
 import moblima.control.StaffController.LogoutFeedback;
 
-/**
-* TODOs: implement update/removeMovieListing, create/update/removeMovieShowing, updateTicketPrice, addHoliday
-*/
 public class StaffInterface {
+    /**
+     * The StaffInterface is created by itself
+     * Since StaffInterface is a singleton class
+     * It can only be created by itself
+     */
     private static StaffInterface staffInterface = null;
+    /**
+     * Created a moviegoer controller
+     */
     private StaffController staffController;
 
+    /**
+     * To avoids other class to create a staff interface
+     * It can only be created by itself
+     */
     private StaffInterface() {
         staffController = StaffController.getInstance();
     }
 
+    /**
+     * Gets a staff interface
+     * If saff interface has not been created yet
+     * create a new staff interface then return it
+     * @return the staff interface
+     */
     public static StaffInterface getInstance() {
         if (staffInterface == null) {
             staffInterface = new StaffInterface();
@@ -31,6 +58,13 @@ public class StaffInterface {
         return staffInterface;
     }
 
+    /**
+     * Interaction with the user
+     * print the menu option
+     * get user input
+     * and then pass parameters to controller
+     * display feedback to the user
+     */
     protected void interact() {
         int choice, index;
         boolean logoutStatus;
@@ -91,6 +125,9 @@ public class StaffInterface {
         }
     }
 
+    /**
+     * Print the menu option
+     */
     private void print() {
         System.out.print(
         "===Menu===\n" +
@@ -110,6 +147,9 @@ public class StaffInterface {
         );
     }
 
+    /**
+     * Creat movie listing
+     */
     private void createMovieListing(Scanner sc) {
         MovieInfo movie;
         int count, choice, reviewRating, i;
@@ -185,6 +225,9 @@ public class StaffInterface {
         System.out.println("Movie listing created");
     }
 
+    /**
+     *Update movie listing
+     */
     private void updateMovieListing(int index, Scanner sc) {
         int choice;
         String synopsis;
@@ -234,12 +277,18 @@ public class StaffInterface {
         staffController.updateMovieListing(movieToUpdate, newMovieInfo);
     }
 
+    /**
+     *Remove movie listing
+     */
     private void removeMovieListing(int index) {
         MovieInfo movieToRemove;
         movieToRemove = staffController.searchForMovie(index);
         staffController.removeMovieListing(movieToRemove);
     }
 
+    /**
+     *Creat movie Showing
+     */
     private void createMovieShowing(Scanner sc) {
         MovieInfo movie;
         Cinema cinema;
@@ -255,13 +304,13 @@ public class StaffInterface {
         index = listAndSelectCineplex(sc);
         cineplex = staffController.searchForCineplex(index);
 
-        index = listAndSelectCinema(sc);
-        cinema = staffController.searchForCinema(index);
+        index = listAndSelectCinema(sc, cineplex);
+        cinema = staffController.searchForCinema(index, cineplex);
 
         sc.nextLine();
         System.out.print("Input showtime in format DD/MM/YYYY HH:MM: ");
         showTimeString = sc.nextLine();
-        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         try {
             showTime = fmt.parse(showTimeString);
         } catch (ParseException e) {
@@ -272,6 +321,9 @@ public class StaffInterface {
         staffController.createMovieShowing(movieShowingToAdd);
     }
 
+    /**
+     *Update movie showing
+     */
     private void updateMovieShowing(Scanner sc) {
         String newShowTimeString;
         Date newShowTime = null;
@@ -294,12 +346,18 @@ public class StaffInterface {
         staffController.updateMovieShowing(newShowTime, movieShowingToUpdate);
     }
 
+    /**
+     * Remove movie showing
+     */
     private void removeMovieShowing(int index) {
         MovieShowing movieShowingToRemove;
         movieShowingToRemove = staffController.searchForMovieShowing(index);
         staffController.removeMovieShowing(movieShowingToRemove);
     }
 
+    /**
+     * Update the base price of the movie
+     */
     private void updateTicketPrice(int index, Scanner sc) {
         double price;
         MovieInfo movieToUpdate;
@@ -309,6 +367,10 @@ public class StaffInterface {
         staffController.updateTicketPrice(movieToUpdate, price);
     }
 
+    /**
+     * List and select movie to modify
+     * @return the movie index
+     */
     private int listAndSelectMovie(Scanner sc) {
         List<MovieInfo> movies = staffController.listAllMovies();
         int index;
@@ -321,6 +383,10 @@ public class StaffInterface {
         return index;
     }
 
+    /**
+     * List and select movie on showing to modify
+     * @return the movie index
+     */
     private int listAndSelectMovieShowing(Scanner sc) {
         List<MovieShowing> movieShowings = staffController.listAllShowings();
         int index;
@@ -333,18 +399,26 @@ public class StaffInterface {
         return index;
     }
 
-    private int listAndSelectCinema(Scanner sc) {
-        List<Cinema> cinemas = staffController.listAllCinemas();
-        int index;
+    /**
+     * List and select the cinema to modify
+     * @return the cinema index
+     */
+    private int listAndSelectCinema(Scanner sc, Cineplex cineplex) {
+        Cinema[] cinemas = staffController.listAllCinemas(cineplex);
+        int index, i;
 
-        for (Cinema cinema: cinemas) {
-            System.out.println(cinemas.indexOf(cinema) + ". " + cinema.toString());
+        for (i=0; i<cinemas.length; ++i) {
+            System.out.println(i + ". " + cinemas[i].toString());
         }
         System.out.print("Please input id of the cinema: ");
         index = sc.nextInt();
         return index;
     }
 
+    /**
+     * List and select the cimeplex to modify
+     * @return the cineplex index
+     */
     private int listAndSelectCineplex(Scanner sc) {
         List<Cineplex> cineplexes = staffController.listAllCineplexes();
         int index;
@@ -357,6 +431,9 @@ public class StaffInterface {
         return index;
     }
 
+    /**
+     * List top 5 by sale
+     */
     private void listTop5BySale() {
         List<MovieInfo> topMovies = staffController.getTop5BySale();
         System.out.println("The top 5 movies by sale are:");
@@ -365,6 +442,9 @@ public class StaffInterface {
         }
     }
 
+    /**
+     * List top 5 by rating
+     */
     private void listTop5ByRating() {
         List<MovieInfo> topMovies = staffController.getTop5ByRating();
         System.out.println("The top 5 movies by rating are:");
@@ -373,6 +453,9 @@ public class StaffInterface {
         }
     }
 
+    /**
+     * Logout
+     */
     private void logout() {
         LogoutFeedback feedback = staffController.logout();
         if (feedback == LogoutFeedback.LOGOUTSUCCESS) {
@@ -383,6 +466,9 @@ public class StaffInterface {
         }
     }
 
+    /**
+     * Add holiday
+     */
     private void addHoliday(Scanner sc) {
         Date holiday;
         SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");

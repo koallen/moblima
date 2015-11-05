@@ -13,7 +13,7 @@ public class Cineplex{
 	/**
 	 * List of cinemas in this Cineplex
 	 */
-	private Cinema[] cinema;
+	private Cinema[] cinemas;
 	/**
 	 * Creates a Cineplex with given name,
 	 * a list of cinemas and number of cinemas in this Cineplex
@@ -21,11 +21,11 @@ public class Cineplex{
 	 * @param cinema List of cinema in this Cineplex
 	 * @param numOfCinema Number of cinema in this Cineplex
 	 */
-	public Cineplex(String cineplexName, Cinema[] cinema, int numOfCinema) {
-		cinema = new Cinema[numOfCinema];
+	public Cineplex(String cineplexName, Cinema[] cinemas, int numOfCinema) {
+		cinemas = new Cinema[numOfCinema];
 		this.cineplexName = cineplexName;
 		for (int i=0;i<numOfCinema;i++){
-			this.cinema[i]=cinema[i];
+			this.cinemas[i]=cinemas[i];
 		}
 	}
 	/**
@@ -36,16 +36,14 @@ public class Cineplex{
 		return cineplexName;
 	}
 	/**
-	 * Gets a certain cinema in this Cineplex
-	 * with the given cinema ID
-	 * @param cinemaID the cinema ID of the requested cinema
-	 * @return the requested cinema
+	 * Gets cinemas in this cineplex
+	 * @return All cinemas in this cineplex
 	 */
-	public Cinema getCinema(int cinemaID) {
-		return cinema[cinemaID];
+	public Cinema[] getCinemas() {
+		return cinemas;
 	}
 	/**
-     * Gets the string representation 
+     * Gets the string representation
      * for the name of this cineplex
      * @return string representation of cineplex name
      */

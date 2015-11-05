@@ -42,57 +42,7 @@
       "col": 1
     },
     "cineplex": {
-      "cineplexName": "Golden Village",
-      "cinema": [
-        {
-          "classOfCinema": "GOLD",
-          "cinemaCode": "XXX",
-          "seats": [
-            [
-              {
-                "seatID": "A1",
-                "status": "NOTTAKEN"
-              }
-            ]
-          ],
-          "cinemaIndex": 1,
-          "numberOfEmptySeat": 1,
-          "row": 1,
-          "col": 1
-        },
-        {
-          "classOfCinema": "GOLD",
-          "cinemaCode": "YYY",
-          "seats": [
-            [
-              {
-                "seatID": "A1",
-                "status": "NOTTAKEN"
-              }
-            ]
-          ],
-          "cinemaIndex": 2,
-          "numberOfEmptySeat": 1,
-          "row": 1,
-          "col": 1
-        },
-        {
-          "classOfCinema": "GOLD",
-          "cinemaCode": "ZZZ",
-          "seats": [
-            [
-              {
-                "seatID": "A1",
-                "status": "NOTTAKEN"
-              }
-            ]
-          ],
-          "cinemaIndex": 3,
-          "numberOfEmptySeat": 1,
-          "row": 1,
-          "col": 1
-        }
-      ]
+      "cineplexName": "Golden Village"
     },
     "showTime": "30/10/2015 02:00"
   },
@@ -101,7 +51,7 @@
       "title": "The Martian",
       "showingStatus": "NOWSHOWING",
       "typeOfMovie": "THREED",
-      "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
+      "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
       "director": "Ridley Scoot",
       "casts": [
         "Matt Damon",
@@ -143,58 +93,5352 @@
       "col": 1
     },
     "cineplex": {
-      "cineplexName": "Golden Village",
-      "cinema": [
+      "cineplexName": "Golden Village"
+    },
+    "showTime": "01/11/2015 08:30"
+  },
+  {
+    "movie": {
+      "title": "The Walk",
+      "showingStatus": "NOWSHOWING",
+      "typeOfMovie": "BLOCKBUSTER",
+      "synopsis": "Twelve people have walked on the moon, but only one man�Philippe Petit (Joseph Gordon-Levitt)�has ever, or will ever, walk in the immense void between the World Trade Center towers. Guided by his real-life mentor, Papa Rudy (Ben Kingsley), and aided by an unlikely band of international recruits, Petit and his gang overcome long odds, betrayals, dissension and countless close calls to conceive and execute their mad plan. ",
+      "director": "Robert Zemeckis",
+      "casts": [
+        "Joseph Gordon-Levitt",
+        "Ben Kingsley"
+      ],
+      "overallRating": 4.5,
+      "pastReviews": [
         {
-          "classOfCinema": "GOLD",
-          "cinemaCode": "XXX",
+          "content": "A word of caution : People with vertigo or acrophobia should really think twice before watching this movie.",
+          "rating": 4
+        },
+        {
+          "content": "Best Family Movie Of 2015.",
+          "rating": 5
+        }
+      ],
+      "basePrice": 12.0,
+      "rating": "PG13",
+      "sale": 0
+    },
+    "cinema": {
+      "classOfCinema": "GOLD",
+      "cinemaCode": "002",
+      "seats": [
+        [
+          {
+            "seatID": "A1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A3",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "A3",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "A4",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "A6",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "B5",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "A8",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "A9",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "A10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A11",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "B1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B3",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "B3",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "B4",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "B6",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "B7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B9",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "B7",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "B11",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "C1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C3",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "C4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C6",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "C7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C9",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "C7",
+            "status": "TAKEN"
+          },
+          {
+            "seatID": "C11",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "D1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D3",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "D4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D6",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "D7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D9",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "D10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D11",
+            "status": "NOTTAKEN"
+          }
+        ]
+      ],
+      "cinemaIndex": 2,
+      "numberOfEmptySeat": 32,
+      "row": 4,
+      "col": 8
+    },
+    "cineplex": {
+      "cineplexName": "Golden Village Jurong Point",
+      "cinemas": [
+        {
+          "classOfCinema": "NORMAL",
+          "cinemaCode": "001",
           "seats": [
             [
               {
                 "seatID": "A1",
                 "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "B1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "C1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "D1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "E1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "F1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "G1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "H1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "J1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "K1",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "K2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K21",
+                "status": "NOTEXIST"
               }
             ]
           ],
           "cinemaIndex": 1,
-          "numberOfEmptySeat": 1,
-          "row": 1,
-          "col": 1
+          "numberOfEmptySeat": 208,
+          "row": 10,
+          "col": 21
         },
         {
           "classOfCinema": "GOLD",
-          "cinemaCode": "YYY",
+          "cinemaCode": "002",
           "seats": [
             [
               {
                 "seatID": "A1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "A4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "A7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "A10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A11",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "B1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "B4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "B7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "B10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B11",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "C1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "C4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "C7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "C10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C11",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "D1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "D4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "D7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "D10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D11",
                 "status": "NOTTAKEN"
               }
             ]
           ],
           "cinemaIndex": 2,
-          "numberOfEmptySeat": 1,
-          "row": 1,
-          "col": 1
+          "numberOfEmptySeat": 32,
+          "row": 4,
+          "col": 8
         },
         {
-          "classOfCinema": "GOLD",
-          "cinemaCode": "ZZZ",
+          "classOfCinema": "NORMAL",
+          "cinemaCode": "001",
           "seats": [
             [
               {
                 "seatID": "A1",
                 "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "B1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "C1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "D1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "E1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "F1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "G1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "H1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "J1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "K1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "L1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "M1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M21",
+                "status": "NOTTAKEN"
               }
             ]
           ],
           "cinemaIndex": 3,
-          "numberOfEmptySeat": 1,
-          "row": 1,
-          "col": 1
+          "numberOfEmptySeat": 252,
+          "row": 12,
+          "col": 21
         }
       ]
     },
-    "showTime": "01/11/2015 08:30"
+    "showTime": "05/11/2015 02:30"
+  },
+  {
+    "movie": {
+      "title": "Our Times",
+      "showingStatus": "NOWSHOWING",
+      "typeOfMovie": "BLOCKBUSTER",
+      "synopsis": "We all had to live through and rise above the awkward years in high school, and regardless how long it may have been a distant past you wish to forget, there\u0027s always a beautiful memory somewhere waiting to be awakened.",
+      "director": "Frankie Chen",
+      "casts": [
+        "Vivian Sung",
+        "Dino Lee",
+        "Dewi Chien",
+        "Darren Wang"
+      ],
+      "overallRating": 4.5,
+      "pastReviews": [
+        {
+          "content": "A truly magical journey that will leave you breathless and crying",
+          "rating": 5
+        },
+        {
+          "content": "A Simple Story of First Love, Poison Chain Letters and Teenage Idols That is Well-Cast, Well-Acted, Well-Written and Thoughtfully Made",
+          "rating": 4
+        }
+      ],
+      "basePrice": 12.0,
+      "rating": "PG13",
+      "sale": 0
+    },
+    "cinema": {
+      "classOfCinema": "NORMAL",
+      "cinemaCode": "001",
+      "seats": [
+        [
+          {
+            "seatID": "A1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "A21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "B1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "B21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "C1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "C21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "D1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "D21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "E1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "E21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "F1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "F21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "G1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "G21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "H1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "H21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "J1",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "J21",
+            "status": "NOTTAKEN"
+          }
+        ],
+        [
+          {
+            "seatID": "K1",
+            "status": "NOTEXIST"
+          },
+          {
+            "seatID": "K2",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K3",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K4",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K5",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K6",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K7",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K8",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K9",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K10",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K11",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K12",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K13",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K14",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K15",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K16",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K17",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K18",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K19",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K20",
+            "status": "NOTTAKEN"
+          },
+          {
+            "seatID": "K21",
+            "status": "NOTEXIST"
+          }
+        ]
+      ],
+      "cinemaIndex": 1,
+      "numberOfEmptySeat": 208,
+      "row": 10,
+      "col": 21
+    },
+    "cineplex": {
+      "cineplexName": "Golden Village VivoCity",
+      "cinemas": [
+        {
+          "classOfCinema": "NORMAL",
+          "cinemaCode": "001",
+          "seats": [
+            [
+              {
+                "seatID": "A1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "B1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "C1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "D1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "E1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "F1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "G1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "H1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "J1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "K1",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "K2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K21",
+                "status": "NOTEXIST"
+              }
+            ]
+          ],
+          "cinemaIndex": 1,
+          "numberOfEmptySeat": 208,
+          "row": 10,
+          "col": 21
+        },
+        {
+          "classOfCinema": "GOLD",
+          "cinemaCode": "002",
+          "seats": [
+            [
+              {
+                "seatID": "A1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "A4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "A7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "A10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A11",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "B1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "B4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "B7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "B10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B11",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "C1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "C4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "C7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "C10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C11",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "D1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D3",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "D4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D6",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "D7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D9",
+                "status": "NOTEXIST"
+              },
+              {
+                "seatID": "D10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D11",
+                "status": "NOTTAKEN"
+              }
+            ]
+          ],
+          "cinemaIndex": 2,
+          "numberOfEmptySeat": 32,
+          "row": 4,
+          "col": 8
+        },
+        {
+          "classOfCinema": "NORMAL",
+          "cinemaCode": "001",
+          "seats": [
+            [
+              {
+                "seatID": "A1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "A21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "B1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "B21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "C1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "C21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "D1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "D21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "E1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "E21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "F1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "F21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "G1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "G21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "H1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "H21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "J1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "J21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "K1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "K21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "L1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "L21",
+                "status": "NOTTAKEN"
+              }
+            ],
+            [
+              {
+                "seatID": "M1",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M2",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M3",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M4",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M5",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M6",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M7",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M8",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M9",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M10",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M11",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M12",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M13",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M14",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M15",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M16",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M17",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M18",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M19",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M20",
+                "status": "NOTTAKEN"
+              },
+              {
+                "seatID": "M21",
+                "status": "NOTTAKEN"
+              }
+            ]
+          ],
+          "cinemaIndex": 3,
+          "numberOfEmptySeat": 252,
+          "row": 12,
+          "col": 21
+        }
+      ]
+    },
+    "showTime": "06/11/2015 14:30"
   }
 ]

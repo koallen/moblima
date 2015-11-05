@@ -1,34 +1,129 @@
 [
   {
-    "title": "Burnt",
+    "title": "Thoonga Vanam",
     "showingStatus": "NOWSHOWING",
-    "typeOfMovie": "THREED",
-    "synopsis": "Chef Adam Jones (Bradley Cooper) had it all—and lost it. A two-star Michelin rockstar with the bad habits to match, the former enfant terrible of the Paris restaurant scene did everything different every time out, and only ever cared about the thrill of creating explosions of taste. To land his own kitchen and that third elusive Michelin star though, he’ll need the best of the best on his side, including the beautiful Helene (Sienna Miller). Burnt is a remarkably funny and emotional story about the love of food, the love between two people, and the power of second chances.",
-    "director": "John Wells",
+    "typeOfMovie": "BLOCKBUSTER",
+    "synopsis": "Directed by Rajesh M Selva an assistant of Kamal Haasan and music composed by Ghibran, Thoonga Vanam is an upcoming crime thriller movie with a stellar star cast which includes Kamal Haasan, Trisha, Prakash Raj. ",
+    "director": "Rajesh M. Selva",
     "casts": [
-      "Bradley Cooper",
-      "Sienna Miller"
+      "Kamal Haasan",
+      "Trisha",
+      "Prakash Raj"
     ],
-    "overallRating": 4.0,
+    "overallRating": 0.0,
+    "pastReviews": [],
+    "basePrice": 10.0,
+    "rating": "NC16",
+    "sale": 0
+  },
+  {
+    "title": "Paranormal Activity: The Ghost Dimension",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "BLOCKBUSTER",
+    "synopsis": "A family that has recently moved into a new house in Palo Alto, CA is terrorized by supernatural entities in the fifth installment of the Paranormal Activity horror franchise. The father Ryan (Chris J. Murray) discovers a box of video tapes left in the house and a video camera that can record paranormal occurrences that are invisible to the naked eye. ",
+    "director": "Gregory Plotkin",
+    "casts": [
+      "Olivia Taylor Dudley",
+      "Katie Featherston",
+      "Tyler Craig",
+      "Chloe Csengery"
+    ],
+    "overallRating": 1.5,
     "pastReviews": [
       {
-        "content": "This is very good",
-        "rating": 5
+        "content": "Most disappointing film of the year",
+        "rating": 1
       },
       {
-        "content": "Interesting",
-        "rating": 3
+        "content": "Last One In Franchise! Thank Goodness!",
+        "rating": 2
       }
     ],
     "basePrice": 12.0,
     "rating": "NC16",
-    "sale": 5
+    "sale": 0
+  },
+  {
+    "title": "Spectre",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "BLOCKBUSTER",
+    "synopsis": "In SPECTRE, a cryptic message from Bond�s past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
+    "director": "Sam Mendes",
+    "casts": [
+      "Daniel Craig",
+      "Ben Whishaw",
+      "Naomie Harris",
+      "Ralph Fiennes"
+    ],
+    "overallRating": 2.5,
+    "pastReviews": [
+      {
+        "content": "I was expecting a lot of this film with all of its pre-launch hype. To be honest the film was a major disappointment and I found myself falling asleep at times through sheer boredom.",
+        "rating": 1
+      },
+      {
+        "content": "My verdict: Spectre is a love letter to the classic Bond films, and while it might not be the masterpiece many people seem to have expected, there is a lot to enjoy here. It\u0027s a solid, almost classic Bond film with insane action, great set- pieces and a fantastic cast; upon first viewing, I\u0027d rate it 7.5 stars out of 10.",
+        "rating": 4
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "PG13",
+    "sale": 0
+  },
+  {
+    "title": "Bridge Of Spies",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "THREED",
+    "synopsis": "A dramatic thriller set against the backdrop of a series of historic events, DreamWorks Pictures/Fox 2000 Pictures� �Bridge of Spies� tells the story of James Donovan, a Brooklyn lawyer who finds himself thrust into the center of the Cold War when the CIA sends him on the near-impossible task to negotiate the release of a captured American U-2 pilot.",
+    "director": "Steven Spielberg",
+    "casts": [
+      "Tom Hanks",
+      "Scott Shepherd",
+      "Amy Ryan",
+      "Mark Rylance"
+    ],
+    "overallRating": 3.0,
+    "pastReviews": [
+      {
+        "content": "Disappointingly shallow and poorly acted out",
+        "rating": 2
+      },
+      {
+        "content": "An unshowy Steven Spielberg does a master\u0027s job with Cold War tensions, honoring a real-life attorney\u0027s victory over fear.",
+        "rating": 4
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "PG13",
+    "sale": 0
+  },
+  {
+    "title": "Goodbye Mr. Loser",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "BLOCKBUSTER",
+    "synopsis": "Comedians Shen Teng and Mai Li star in this film adaptation of the very popular Mainland theater play following the story of a middle-aged loser who finds himself magically transported back to his high school years, enabling him to fix all his life\u0027s mistakes. ",
+    "director": "Peng Damo",
+    "casts": [
+      "Shen Teng",
+      "Ma Li",
+      "Yin Zheng"
+    ],
+    "overallRating": 3.0,
+    "pastReviews": [
+      {
+        "content": "Tragedy is Getting What You Thought You Wanted",
+        "rating": 3
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "PG13",
+    "sale": 0
   },
   {
     "title": "The Martian",
     "showingStatus": "NOWSHOWING",
     "typeOfMovie": "THREED",
-    "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
+    "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
     "director": "Ridley Scoot",
     "casts": [
       "Matt Damon",
@@ -54,28 +149,107 @@
     "sale": 35
   },
   {
-    "title": "test movie title",
-    "showingStatus": "COMINGSOON",
+    "title": "Burnt",
+    "showingStatus": "NOWSHOWING",
     "typeOfMovie": "THREED",
-    "synopsis": "test synopsis",
-    "director": "test director",
+    "synopsis": "Chef Adam Jones (Bradley Cooper) had it all—and lost it. A two-star Michelin rockstar with the bad habits to match, the former enfant terrible of the Paris restaurant scene did everything different every time out, and only ever cared about the thrill of creating explosions of taste. To land his own kitchen and that third elusive Michelin star though, he’ll need the best of the best on his side, including the beautiful Helene (Sienna Miller). Burnt is a remarkably funny and emotional story about the love of food, the love between two people, and the power of second chances.",
+    "director": "John Wells",
     "casts": [
-      "test cast 0",
-      "test cast 1"
+      "Bradley Cooper",
+      "Sienna Miller"
     ],
-    "overallRating": 3.0,
+    "overallRating": 4.0,
     "pastReviews": [
       {
-        "content": "test review content 0",
-        "rating": 2
+        "content": "This is very good",
+        "rating": 5
       },
       {
-        "content": "",
+        "content": "Interesting",
+        "rating": 3
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "NC16",
+    "sale": 5
+  },
+  {
+    "title": "The Walk",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "BLOCKBUSTER",
+    "synopsis": "Twelve people have walked on the moon, but only one man�Philippe Petit (Joseph Gordon-Levitt)�has ever, or will ever, walk in the immense void between the World Trade Center towers. Guided by his real-life mentor, Papa Rudy (Ben Kingsley), and aided by an unlikely band of international recruits, Petit and his gang overcome long odds, betrayals, dissension and countless close calls to conceive and execute their mad plan. ",
+    "director": "Robert Zemeckis",
+    "casts": [
+      "Joseph Gordon-Levitt",
+      "Ben Kingsley"
+    ],
+    "overallRating": 4.5,
+    "pastReviews": [
+      {
+        "content": "A word of caution : People with vertigo or acrophobia should really think twice before watching this movie.",
+        "rating": 4
+      },
+      {
+        "content": "Best Family Movie Of 2015.",
+        "rating": 5
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "PG13",
+    "sale": 1
+  },
+  {
+    "title": "Our Times",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "BLOCKBUSTER",
+    "synopsis": "We all had to live through and rise above the awkward years in high school, and regardless how long it may have been a distant past you wish to forget, there\u0027s always a beautiful memory somewhere waiting to be awakened.",
+    "director": "Frankie Chen",
+    "casts": [
+      "Vivian Sung",
+      "Dino Lee",
+      "Dewi Chien",
+      "Darren Wang"
+    ],
+    "overallRating": 4.5,
+    "pastReviews": [
+      {
+        "content": "A truly magical journey that will leave you breathless and crying",
+        "rating": 5
+      },
+      {
+        "content": "A Simple Story of First Love, Poison Chain Letters and Teenage Idols That is Well-Cast, Well-Acted, Well-Written and Thoughtfully Made",
         "rating": 4
       }
     ],
     "basePrice": 12.0,
     "rating": "PG13",
+    "sale": 0
+  },
+  {
+    "title": "Goosebumps",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "THREED",
+    "synopsis": "Upset about moving from a big city to a small town, teenager Zach Cooper (Dylan Minnette) finds a silver lining when he meets the beautiful girl, Hannah (Odeya Rush), living right next door. But every silver lining has a cloud, and Zach\u0027s comes when he learns that Hannah has a mysterious dad who is revealed to be R. L. Stine (Jack Black), the author of the bestselling Goosebumps series. It turns out that there is a reason why Stine is so strange... ",
+    "director": "Rob Letterman",
+    "casts": [
+      "Jack Black",
+      "Dylan Minnette",
+      "Amy Ryan",
+      "Odeya Rush"
+    ],
+    "overallRating": 4.5,
+    "pastReviews": [
+      {
+        "content": "It\u0027s a nostalgia bomb, destined to be a Halloween classic.",
+        "rating": 4
+      },
+      {
+        "content": "Absolutely Excellent.",
+        "rating": 5
+      }
+    ],
+    "basePrice": 12.0,
+    "rating": "PG",
     "sale": 0
   }
 ]

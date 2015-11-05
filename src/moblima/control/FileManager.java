@@ -1,12 +1,5 @@
 package moblima.control;
-/**
- * Represent a Manager to control the database
- * Including to save/load data from gson database
- * The datadase stores data for
- * booking, cinema, cineplex, holiday, 
- * movie infomation and movie showing
- * @author SSP2 Team 1
- */
+
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
@@ -19,9 +12,15 @@ import com.google.gson.reflect.TypeToken;
 import moblima.entity.Booking;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
-import moblima.entity.Cinema;
 import moblima.entity.Cineplex;
-
+/**
+ * Represent a Manager to control the database
+ * Including to save/load data from gson database
+ * The datadase stores data for
+ * booking, cinema, cineplex, holiday,
+ * movie infomation and movie showing
+ * @author SSP2 Team 1
+ */
 public class FileManager {
     /**
      * The File Manager created by itself
@@ -47,9 +46,9 @@ public class FileManager {
         return fileManager;
     }
     /**
-     * Load Movie Infomation from gson database
+     * Load Movie Infomation from json database
      * @param filename The file name of movie information file
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      * @return The list of movie information
      */
     protected ArrayList<MovieInfo> loadMovieInfo(String filename, Gson gson) {
@@ -63,9 +62,9 @@ public class FileManager {
         return movies;
     }
     /**
-     * Load Movie showing information from gson database
-     * @param filename The file name of movie showing information file 
-     * @param gson The gson database
+     * Load Movie showing information from json database
+     * @param filename The file name of movie showing information file
+     * @param gson JSON serializer/deserializer
      * @return The list of movie showing information
      */
     protected ArrayList<MovieShowing> loadMovieShowing(String filename, Gson gson) {
@@ -79,9 +78,9 @@ public class FileManager {
         return movieShowings;
     }
     /**
-     * Load booking history from gson database
+     * Load booking history from json database
      * @param filename The file name of booking history
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      * @return The list of booking history
      */
     protected ArrayList<Booking> loadBooking(String filename, Gson gson) {
@@ -95,9 +94,9 @@ public class FileManager {
         return bookings;
     }
     /**
-     * Load holiday records from gson database
+     * Load holiday records from json database
      * @param filename The file name of holiday records
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      * @return The list of holiday
      */
     protected ArrayList<Date> loadHoliday(String filename, Gson gson) {
@@ -111,25 +110,9 @@ public class FileManager {
         return holidays;
     }
     /**
-     * Load information of cinemas from gson database
-     * @param filename The file name of cinema information
-     * @param gson The gson database
-     * @return The list of cinema information
-     */
-    protected ArrayList<Cinema> loadCinema(String filename, Gson gson) {
-        ArrayList<Cinema> cinemas = null;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(filename));
-            cinemas = gson.fromJson(br, new TypeToken<ArrayList<Cinema>>(){}.getType());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return cinemas;
-    }
-    /**
-     * Load information of cineplex from gson database
+     * Load information of cineplex from json database
      * @param filename The file name of cineplex information
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      * @return The list of cineplex information
      */
     protected ArrayList<Cineplex> loadCineplex(String filename, Gson gson) {
@@ -143,10 +126,10 @@ public class FileManager {
         return cineplexes;
     }
     /**
-     * Save movie infomation into gson database
+     * Save movie infomation into json database
      * @param movies The list of movie information
      * @param filename The file name of movie information
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      */
     protected void saveMovieInfo(List<MovieInfo> movies, String filename, Gson gson) {
         String json = gson.toJson(movies);
@@ -159,10 +142,10 @@ public class FileManager {
         }
     }
     /**
-     * Save movie showing infomation into gson database
+     * Save movie showing infomation into json database
      * @param movieShowings The list of movie showing information
      * @param filename The file name of movie showing information
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      */
     protected  void saveMovieShowing(List<MovieShowing> movieShowings, String filename, Gson gson) {
         String json = gson.toJson(movieShowings);
@@ -175,10 +158,10 @@ public class FileManager {
         }
     }
     /**
-     * Save booking history into gson database
+     * Save booking history into json database
      * @param bookings The list of booking history
      * @param filename The file name of booking history
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      */
     protected void saveBooking(List<Booking> bookings, String filename, Gson gson) {
         String json = gson.toJson(bookings);
@@ -191,10 +174,10 @@ public class FileManager {
         }
     }
     /**
-     * Save holiday record into gson database
+     * Save holiday record into json database
      * @param holidays The list of holiday record
      * @param filename The file name of holiday record
-     * @param gson The gson database
+     * @param gson JSON serializer/deserializer
      */
     protected void saveHoliday(List<Date> holidays, String filename, Gson gson) {
         String json = gson.toJson(holidays);

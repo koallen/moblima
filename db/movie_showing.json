@@ -83,7 +83,7 @@
         [
           {
             "seatID": "A1",
-            "status": "NOTTAKEN"
+            "status": "TAKEN"
           }
         ]
       ],

@@ -149,6 +149,7 @@ public class StaffInterface {
 
     /**
      * Creat movie listing
+     * @param sc Java scanner
      */
     private void createMovieListing(Scanner sc) {
         MovieInfo movie;
@@ -226,7 +227,9 @@ public class StaffInterface {
     }
 
     /**
-     *Update movie listing
+     * Update movie listing
+     * @param index the index of movie in the movielisting
+     * @param sc Java scanner
      */
     private void updateMovieListing(int index, Scanner sc) {
         int choice;
@@ -278,7 +281,8 @@ public class StaffInterface {
     }
 
     /**
-     *Remove movie listing
+     * Remove movie listing
+     * @param index the index of movie in the movielisting
      */
     private void removeMovieListing(int index) {
         MovieInfo movieToRemove;
@@ -287,7 +291,8 @@ public class StaffInterface {
     }
 
     /**
-     *Creat movie Showing
+     * Creat movie Showing list
+     * @param sc Java scanner
      */
     private void createMovieShowing(Scanner sc) {
         MovieInfo movie;
@@ -322,7 +327,8 @@ public class StaffInterface {
     }
 
     /**
-     *Update movie showing
+     * Update movie showing list
+     * @param sc Java scanner
      */
     private void updateMovieShowing(Scanner sc) {
         String newShowTimeString;
@@ -348,6 +354,7 @@ public class StaffInterface {
 
     /**
      * Remove movie showing
+     * @param index the index of movie in the movielisting
      */
     private void removeMovieShowing(int index) {
         MovieShowing movieShowingToRemove;
@@ -357,6 +364,8 @@ public class StaffInterface {
 
     /**
      * Update the base price of the movie
+     * @param index the index of movie in the movielisting
+     * @param sc Java scanner
      */
     private void updateTicketPrice(int index, Scanner sc) {
         double price;
@@ -369,6 +378,7 @@ public class StaffInterface {
 
     /**
      * List and select movie to modify
+     * @param sc Java scanner
      * @return the movie index
      */
     private int listAndSelectMovie(Scanner sc) {
@@ -385,6 +395,7 @@ public class StaffInterface {
 
     /**
      * List and select movie on showing to modify
+     * @param sc Java scanner
      * @return the movie index
      */
     private int listAndSelectMovieShowing(Scanner sc) {
@@ -401,6 +412,8 @@ public class StaffInterface {
 
     /**
      * List and select the cinema to modify
+     * @param sc Java scanner
+     * @param cineplex the cineplex that staff chooses to showing the movie
      * @return the cinema index
      */
     private int listAndSelectCinema(Scanner sc, Cineplex cineplex) {
@@ -417,6 +430,7 @@ public class StaffInterface {
 
     /**
      * List and select the cimeplex to modify
+     * @param sc Java scanner
      * @return the cineplex index
      */
     private int listAndSelectCineplex(Scanner sc) {
@@ -465,6 +479,7 @@ public class StaffInterface {
 
     /**
      * Add holiday
+     * @param sc Java scanner
      */
     private void addHoliday(Scanner sc) {
         Date holiday;

@@ -169,6 +169,13 @@ public class MovieInfo implements Cloneable {
         this.showingStatus = showingStatus;
     }
     /**
+     * Get the type of movie
+     * @return The type of movie
+     */
+    public TypeOfMovie getTypeOfMovie() {
+        return typeOfMovie;
+    }
+    /**
      * Changes the type of this movie
      * @param typeOfMovie The new type of this movie
      */

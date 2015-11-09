@@ -136,10 +136,13 @@ public class MovieGoerInterface {
      * choose the seats
      * and complete the booking
      * with name email and mobile phone number
+     * @param sc Java scanner
      */
     private void bookAMovie(Scanner sc){
         String movieName, movieGoerName, bookingId;
         int index;
+        double price;
+        boolean discount;
         MovieInfo movieToBook;
         MovieShowing movieShowing;
         List<MovieInfo> searchResult;
@@ -211,7 +214,10 @@ public class MovieGoerInterface {
             System.out.println("Seat selection unsuccessful\nMake sure you select an empty seat");
         }
 
-        double price = movieGoerController.calculate(movieShowing);
+        System.out.print("Are you a child or an elder? (true/false): ");
+        discount = sc.nextBoolean();
+        price = movieGoerController.calculatePrice(movieShowing, discount);
+        System.out.println("The movie price is " + price);
         MovieTicket movieTicket = new MovieTicket(movieShowing, seat, price);
         sc.nextLine();
         System.out.print("Please input your name: ");
@@ -231,6 +237,7 @@ public class MovieGoerInterface {
      * Log in as staff
      * Check the username and password
      * Check whether the user already logged in
+     * @param sc Java scanner
      */
     private void loginAsStaff(Scanner sc) {
         String username, password;
@@ -257,6 +264,7 @@ public class MovieGoerInterface {
 
     /**
      * View booking history of the input name
+     * @param sc Java scanner
      */
     private void viewBookingHistory(Scanner sc) {
         String movieGoerName;
@@ -289,6 +297,7 @@ public class MovieGoerInterface {
 
     /**
      * Search movies
+     * @param sc Java scanner
      */
     private ArrayList<MovieInfo> searchMovies(Scanner sc) {
         ArrayList<MovieInfo> searchResult;
@@ -312,7 +321,8 @@ public class MovieGoerInterface {
     }
 
     /**
-     *
+     * Add review to the movie
+     * @param sc Java scanner
      */
     private void addReview(Scanner sc) {
         List<MovieInfo> results = searchMovies(sc);

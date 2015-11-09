@@ -1,6 +1,7 @@
 package moblima.control;
 
 import java.util.*;
+import java.text.SimpleDateFormat;
 import moblima.entity.Seat;
 import moblima.entity.Review;
 import moblima.entity.Booking;
@@ -198,27 +199,50 @@ public class MovieGoerController {
      * The final price is varied depending on
      * if they are previliged person
      * @param movieShowing The movie user wants to book
+     * @param discount Whether the movie goer can enjoy discount
      * @return The final price of the ticket
      */
-    public double calculate(MovieShowing movieShowing){
-        double price = 0.0;
-        System.out.println("Are you a previliged person? (y/n)");
-        Scanner sc = new Scanner(System.in);
-        char choice = sc.next().charAt(0);
-        if(choice == 'n'){
-            System.out.println("The price of the movie ticket is " + movieShowing.getMovie().getBasePrice());
-            price = movieShowing.getMovie().getBasePrice();
-        }
-        else if (choice == 'y'){
-            System.out.println("The price of the movie ticket is " + 0.5 * movieShowing.getMovie().getBasePrice());
-            price = 0.5 * movieShowing.getMovie().getBasePrice();
-        }
-        for (int count = 0; count < holidays.size(); count++){
-            if(movieShowing.getShowTime() == holidays.get(count)){
-                price += 3;
-            }
+    public double calculatePrice(MovieShowing movieShowing, boolean discount) {
+        double price;
+        MovieInfo movie;
+        Date showTime;
 
+        movie = movieShowing.getMovie();
+        price = movie.getBasePrice();
+        showTime = movieShowing.getShowTime();
+        // check type of movie
+        switch (movie.getTypeOfMovie()) {
+            case THREED:
+            case BLOCKBUSTER:
+                price = price + 2.0;
+                break;
+            case NORMAL:
+                break;
         }
+        // check class of cinema
+        switch (movieShowing.getCinema().getClassOfCinema()) {
+            case GOLD:
+                price = price * 2;
+                break;
+            case MAX:
+                price = price + 5.0;
+                break;
+            case NORMAL:
+                break;
+        }
+        // check age of movie goer
+        if (discount == true) {
+            price = price * 0.5;
+        }
+        // check date
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+        for (Date holiday: holidays) {
+            if (fmt.format(holiday).equals(fmt.format(showTime))) {
+                price = price + 2.0;
+                break;
+            }
+        }
+
         return price;
     }
     /**

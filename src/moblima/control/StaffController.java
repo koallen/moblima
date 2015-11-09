@@ -1,6 +1,8 @@
 package moblima.control;
 
 import java.util.*;
+import moblima.entity.User;
+import moblima.entity.User.TypeOfUser;
 import moblima.entity.Review;
 import moblima.entity.Booking;
 import moblima.entity.Cinema;
@@ -210,6 +212,7 @@ public class StaffController {
         if (!loggedIn) {
             if (username.equals(staffUsername) && password.equals(staffPassword)) {
                 loggedIn = true;
+                User.getInstance().setTypeOfUser(TypeOfUser.STAFF);
                 return LoginFeedback.LOGINSUCCESS;
             } else {
                 return LoginFeedback.WRONGUSERNAMEPASSWORD;
@@ -225,6 +228,7 @@ public class StaffController {
     public LogoutFeedback logout() {
         if (loggedIn) {
             loggedIn = false;
+            User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
             return LogoutFeedback.LOGOUTSUCCESS;
         } else {
             return LogoutFeedback.ALREADYLOGGEDOUT;
@@ -313,14 +317,14 @@ public class StaffController {
         Collections.sort(movies, new Comparator<MovieInfo>() {
             @Override
             public int compare(MovieInfo movie1, MovieInfo movie2) {
-                return movie1.getSale() - movie1.getSale();
+                return movie2.getSale() - movie1.getSale();
             }
         });
 
         if (movies.size() < 5) {
             return movies;
         } else {
-            return movies.subList(movies.size()-5, movies.size());
+            return movies.subList(0, 5);
         }
     }
     /**
@@ -331,14 +335,18 @@ public class StaffController {
         Collections.sort(movies, new Comparator<MovieInfo>() {
             @Override
             public int compare(MovieInfo movie1, MovieInfo movie2) {
-                return (int)(movie1.getOverallRating() - movie2.getOverallRating());
+                if (movie2.getOverallRating() > movie1.getOverallRating()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             }
         });
 
         if (movies.size() < 5) {
             return movies;
         } else {
-            return movies.subList(movies.size()-5, movies.size());
+            return movies.subList(0, 5);
         }
     }
     /**

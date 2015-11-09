@@ -243,7 +243,7 @@ public class MovieGoerInterface {
         LoginFeedback feedback = StaffController.getInstance().login(username, password);
         switch (feedback) {
             case LOGINSUCCESS:
-                User.getInstance().setTypeOfUser(TypeOfUser.STAFF);
+                System.out.println("Login successful");
                 break;
             case ALREADYLOGGEDIN:
                 break;

@@ -20,7 +20,7 @@ public class MovieInfo implements Cloneable {
      * Enumeration for types of movie
      * Including 3D and BLOCKBUSTER
      */
-    public enum TypeOfMovie {THREED, BLOCKBUSTER}
+    public enum TypeOfMovie {THREED, BLOCKBUSTER,NORMAL}
     /**
      * Enumeration for ratings of movie
      * Including G, PG, PG13, NC16, M18 and R21

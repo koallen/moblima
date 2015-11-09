@@ -459,10 +459,7 @@ public class StaffInterface {
     private void logout() {
         LogoutFeedback feedback = staffController.logout();
         if (feedback == LogoutFeedback.LOGOUTSUCCESS) {
-            User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
             System.out.println("Logout successful");
-        } else {
-            System.out.println("You are already logged out");
         }
     }
 

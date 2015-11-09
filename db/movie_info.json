@@ -88,7 +88,7 @@
       "Matt Damon",
       "Jessica Chastain"
     ],
-    "overallRating": 4.0,
+    "overallRating": 4.6,
     "pastReviews": [
       {
         "content": "This movie is good.",
@@ -100,6 +100,14 @@
       },
       {
         "content": "this",
+        "rating": 5
+      },
+      {
+        "content": "test",
+        "rating": 4
+      },
+      {
+        "content": "test abstract class",
         "rating": 5
       }
     ],

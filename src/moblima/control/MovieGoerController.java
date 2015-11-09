@@ -20,7 +20,7 @@ import moblima.entity.MovieShowing;
  * List the Top 5 ranking by ticket sales OR by overall reviewers’ ratings
  * @author SSP2 Team1
  */
-public class MovieGoerController {
+public class MovieGoerController extends UserController{
     /**
      * The moviegoer controller created by itself
      * Since MovieGoerController is a singleton class

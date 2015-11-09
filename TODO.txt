@@ -1,2 +1,3 @@
 sale report
 move listTop5 to movieGoerInterface
+print movie info

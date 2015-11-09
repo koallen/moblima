@@ -233,8 +233,8 @@
             "status": "NOTEXIST"
           },
           {
-            "seatID": "C4",
-            "status": "NOTTAKEN"
+            "seatID": "C3",
+            "status": "TAKEN"
           },
           {
             "seatID": "C5",

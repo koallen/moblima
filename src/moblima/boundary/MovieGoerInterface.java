@@ -269,8 +269,9 @@ public class MovieGoerInterface {
     private void viewBookingHistory(Scanner sc) {
         String movieGoerName;
 
+        sc.nextLine();
         System.out.print("Please input your name: ");
-        movieGoerName = sc.next();
+        movieGoerName = sc.nextLine();
 
         ArrayList<Booking> bookingsByUser = movieGoerController.getBookingHistory(movieGoerName);
         if (bookingsByUser.size() != 0) {

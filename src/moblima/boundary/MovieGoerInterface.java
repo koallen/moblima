@@ -331,17 +331,16 @@ public class MovieGoerInterface {
 
         System.out.print("Please input the movie id: ");
         index = sc.nextInt();
-        System.out.println("Please input review content:");
-        content = sc.next();
         sc.nextLine();
+        System.out.println("Please input review content:");
+        content = sc.nextLine();
         System.out.print("Please input review rating: ");
         rating = sc.nextInt();
 
         Review viewerReview = new Review(content, rating);
         results.get(index).addReview(viewerReview);
 
-        // design consideration
-        StaffController.getInstance().calculateOverallRating(results.get(index));
+        movieGoerController.calculateOverallRating(results.get(index));
 
         System.out.println("Review successfully added\n");
     }

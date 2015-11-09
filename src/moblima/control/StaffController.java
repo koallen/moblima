@@ -17,7 +17,7 @@ import moblima.entity.MovieShowing;
  * Configure system settings （ticket prices and holidays)
  * @author SSP2 Team 1
  */
-public class StaffController {
+public class StaffController extends UserController {
     /**
      * Enumeration for different kinds of staff login feedback
      * Including WRONGUSERNAMEPASSWORD, ALREADYLOGGEDIN and LOGINSUCCESS
@@ -348,17 +348,5 @@ public class StaffController {
         } else {
             return movies.subList(0, 5);
         }
-    }
-    /**
-     * Calculate the overral rating for the movie
-     * @param movie The movie needs to be calculated
-     */
-    public void calculateOverallRating(MovieInfo movie) {
-        int sum = 0;
-        for (Review pastReview: movie.getPastReviews()) {
-            sum += pastReview.getRating();
-        }
-        double overallRating = (double)sum / movie.getPastReviews().size();
-        movie.setOverallRating(overallRating);
     }
 }

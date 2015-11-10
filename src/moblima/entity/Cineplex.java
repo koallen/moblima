@@ -18,7 +18,7 @@ public class Cineplex{
 	 * Creates a Cineplex with given name,
 	 * a list of cinemas and number of cinemas in this Cineplex
 	 * @param cineplexName Name of this Cineplex
-	 * @param cinema List of cinema in this Cineplex
+	 * @param cinemas List of cinema in this Cineplex
 	 * @param numOfCinema Number of cinema in this Cineplex
 	 */
 	public Cineplex(String cineplexName, Cinema[] cinemas, int numOfCinema) {

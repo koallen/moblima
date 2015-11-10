@@ -1,3 +1,5 @@
 sale report
-move listTop5 to movieGoerInterface
-print movie info
+
+class diagram enumeration
+
+sequence diagram review

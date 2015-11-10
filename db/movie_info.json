@@ -1,5 +1,46 @@
 [
   {
+    "title": "The Martian",
+    "showingStatus": "NOWSHOWING",
+    "typeOfMovie": "THREED",
+    "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
+    "director": "Ridley Scoot",
+    "casts": [
+      "Matt Damon",
+      "Jessica Chastain"
+    ],
+    "overallRating": 4.0,
+    "pastReviews": [
+      {
+        "content": "This movie is good.",
+        "rating": 5
+      },
+      {
+        "content": "Nice show and it don\u0027t feels long.",
+        "rating": 4
+      },
+      {
+        "content": "this",
+        "rating": 5
+      },
+      {
+        "content": "test",
+        "rating": 4
+      },
+      {
+        "content": "test abstract class",
+        "rating": 5
+      },
+      {
+        "content": "test review",
+        "rating": 1
+      }
+    ],
+    "basePrice": 10.0,
+    "rating": "PG13",
+    "sale": 36
+  },
+  {
     "title": "The Walk",
     "showingStatus": "NOWSHOWING",
     "typeOfMovie": "BLOCKBUSTER",
@@ -22,7 +63,7 @@
     ],
     "basePrice": 12.0,
     "rating": "PG13",
-    "sale": 2
+    "sale": 3
   },
   {
     "title": "Goosebumps",
@@ -76,44 +117,7 @@
     ],
     "basePrice": 12.0,
     "rating": "PG13",
-    "sale": 0
-  },
-  {
-    "title": "The Martian",
-    "showingStatus": "NOWSHOWING",
-    "typeOfMovie": "THREED",
-    "synopsis": "During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive. Millions of miles away, NASA and a team of international scientists work tirelessly to bring “the Martian�? home, while his crewmates concurrently plot a daring, if not impossible rescue mission. As these stories of incredible bravery unfold, the world comes together to root for Watney’s safe return. Based on a best-selling novel, and helmed by master director Ridley Scott, THE MARTIAN features a star studded cast that includes Jessica Chastain, Kristen Wiig, Kate Mara, Michael Peña, Jeff Daniels, Chiwetel Ejiofor, and Donald Glover.",
-    "director": "Ridley Scoot",
-    "casts": [
-      "Matt Damon",
-      "Jessica Chastain"
-    ],
-    "overallRating": 4.6,
-    "pastReviews": [
-      {
-        "content": "This movie is good.",
-        "rating": 5
-      },
-      {
-        "content": "Nice show and it don\u0027t feels long.",
-        "rating": 4
-      },
-      {
-        "content": "this",
-        "rating": 5
-      },
-      {
-        "content": "test",
-        "rating": 4
-      },
-      {
-        "content": "test abstract class",
-        "rating": 5
-      }
-    ],
-    "basePrice": 20.0,
-    "rating": "PG13",
-    "sale": 36
+    "sale": 1
   },
   {
     "title": "Burnt",

@@ -2,6 +2,7 @@ package moblima.control;
 
 import moblima.entity.MovieInfo;
 import moblima.entity.Review;
+import moblima.entity.User;
 
 public abstract class UserController {
     /**
@@ -15,5 +16,11 @@ public abstract class UserController {
         }
         double overallRating = (double)sum / movie.getPastReviews().size();
         movie.setOverallRating(overallRating);
+    }
+    /**
+     * Set user status as inactive
+     */
+    public void exit() {
+        User.getInstance().setActive(false);
     }
 }

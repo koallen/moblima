@@ -5,12 +5,13 @@ import java.util.Date;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import moblima.entity.User;
 import moblima.entity.Booking;
 import moblima.entity.Cinema;
 import moblima.entity.Cineplex;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
-import moblima.boundary.UserInterface;
+import moblima.boundary.MainInterface;
 import moblima.boundary.StaffInterface;
 import moblima.boundary.MovieGoerInterface;
 /**
@@ -65,8 +66,15 @@ public class MainController {
         MovieGoerController.getInstance().initialize(holidays, movies, bookings, movieShowings);
         StaffController.getInstance().initialize(movies, bookings, movieShowings, holidays, cineplexes);
 
-        // start interaction
-        UserInterface.getInstance().start();
+        // start interacting with user
+        User currentUser = User.getInstance();
+        while (currentUser.isActive()) {
+            if (currentUser.isMovieGoer()) {
+                MovieGoerInterface.getInstance().interact();
+            } else {
+                StaffInterface.getInstance().interact();
+            }
+        }
 
         // save entities into json files
         fileManager.saveMovieInfo(movies, movieInfoPath, gson);

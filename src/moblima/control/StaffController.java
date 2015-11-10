@@ -1,6 +1,10 @@
 package moblima.control;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import moblima.entity.User;
 import moblima.entity.User.TypeOfUser;
 import moblima.entity.Review;
@@ -9,6 +13,7 @@ import moblima.entity.Cinema;
 import moblima.entity.Cineplex;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
+import moblima.boundary.StaffInterface;
 /**
  * Represents a controller for all staff module functions
  * The staff module functions include login/logout
@@ -24,42 +29,40 @@ public class StaffController extends UserController {
      */
     public enum LoginFeedback {WRONGUSERNAMEPASSWORD, ALREADYLOGGEDIN, LOGINSUCCESS}
     /**
-     * Enumeration for different kinds of staff logout feedback
-     * Including ALREADYLOGGEDOUT and LOGOUTSUCCESS
-     */
-    public enum LogoutFeedback {ALREADYLOGGEDOUT, LOGOUTSUCCESS}
-    /**
      * The staff controller created by itself
      * Since StaffController is a singleton class
      * It can only be created by itself
      */
     private static StaffController staffController = null;
     /**
+     * The staff interface
+     */
+    private StaffInterface staffInterface = StaffInterface.getInstance();
+    /**
      * The list of all movie informations
      */
-    private List<MovieInfo> movies;
+    private List<MovieInfo> movies = null;
     /**
      * The list of booking records
      */
-    private List<Booking> bookings;
+    private List<Booking> bookings = null;
     /**
      * The list of the information for movies to be shown
      */
-    private List<MovieShowing> movieShowings;
+    private List<MovieShowing> movieShowings = null;
     /**
      * The list of the holiday dates
      */
-    private List<Date> holidays;
+    private List<Date> holidays = null;
     /**
      * The list of cineplexes
      */
-    private List<Cineplex> cineplexes;
+    private List<Cineplex> cineplexes = null;
     /**
      * The boolean expression for loggedIn status
      * it is true when staff logins successful
      */
-    private boolean loggedIn;
-    // define some constants
+    private boolean loggedIn = false;
     /**
      * define the staff login username as moblima
      */
@@ -72,14 +75,7 @@ public class StaffController extends UserController {
      * To avoids other classes to create a staff controller
      * It can only be created by itself
      */
-    private StaffController() {
-        this.movies = null;
-        this.bookings = null;
-        this.movieShowings = null;
-        this.holidays = null;
-        this.cineplexes = null;
-        this.loggedIn = false;
-    }
+    private StaffController() {}
     /**
      * Gets a staff controller
      * If staff controller has not been created yet,
@@ -110,92 +106,306 @@ public class StaffController extends UserController {
         this.cineplexes = cineplexes;
     }
     /**
-     * Gets the list of all movie information
-     * @return the list of all movie information
+     * Creat movie listing
      */
-    public ArrayList<MovieInfo> listAllMovies() {
-        return (ArrayList<MovieInfo>)movies;
+    public void createMovieListing() {
+        MovieInfo movie;
+        int count, choice, reviewRating, i;
+        double basePrice;
+        String title, synopsis, director, reviewContent;
+        String[] casts;
+        MovieInfo.ShowingStatus showingStatus;
+        MovieInfo.TypeOfMovie typeOfMovie;
+        List<Review> pastReviews;
+        MovieInfo.Rating rating;
+
+        title = staffInterface.scanString("Input movie title: ");
+
+        staffInterface.displayLine(
+        "Showing status:\n" +
+        "1. COMINGSOON\n" +
+        "2. PREVIEW\n" +
+        "3. NOWSHOWING\n" +
+        "4. ENDOFSHOWING");
+        showingStatus = MovieInfo.ShowingStatus.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+
+        staffInterface.displayLine(
+        "Type of movie:\n" +
+        "1. THREED\n" +
+        "2. BLOCKBUSTER\n" +
+        "3. NORMAL");
+        typeOfMovie = MovieInfo.TypeOfMovie.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+
+        synopsis = staffInterface.scanLine("Input synopsis: ");
+
+        director = staffInterface.scanLine("Input Director: ");
+
+        count = staffInterface.scanInteger("Number of casts: ");
+        casts = new String[count];
+        for (i=0; i<count; ++i) {
+            casts[i] = staffInterface.scanLine("Cast " + i + ": ");
+        }
+
+        count = staffInterface.scanInteger("Number of past reviews: ");
+        pastReviews = new ArrayList<Review>();
+        for (i=0; i<count; ++i) {
+            staffInterface.displayLine("Review" + i + ". ");
+            reviewContent = staffInterface.scanLine("Content of review: ");
+            reviewRating = staffInterface.scanInteger("Rating: ");
+            pastReviews.add(new Review(reviewContent, reviewRating));
+        }
+
+        basePrice = staffInterface.scanDouble("Base price: ");
+
+        staffInterface.displayLine(
+        "Movie ratings:\n" +
+        "G, PG, PG13, NC16, M18, R21");
+        rating = MovieInfo.Rating.valueOf(staffInterface.scanString("Please enter one the of above: ").toUpperCase());
+
+        movie = new MovieInfo(title, showingStatus, typeOfMovie, synopsis, director, casts, 0.0, (ArrayList<Review>)pastReviews, basePrice, rating, 0);
+        calculateOverallRating(movie);
+        movies.add(movie);
+
+        staffInterface.displayLine("Movie listing created");
     }
     /**
-     * Gets the list of the information for movies to be shown
-     * @return the list of the information for movies to be shown
+     * Update movie listing
      */
-    public ArrayList<MovieShowing> listAllShowings() {
-        return (ArrayList<MovieShowing>)movieShowings;
+    public void updateMovieListing() {
+        int choice, index;
+        String synopsis;
+        MovieInfo movieToUpdate, newMovieInfo;
+
+        index = listAndSelectMovie();
+        movieToUpdate = movies.get(index);
+        newMovieInfo = (MovieInfo)movieToUpdate.clone();
+
+        staffInterface.displayLine(
+        "Choose the field that you want to change:\n" +
+        "1. Showing status\n" +
+        "2. Type of movie\n" +
+        "3. Synopsis\n" +
+        "4. Finish modifying");
+
+        choice = staffInterface.scanInteger("");
+        while (choice != 4) {
+            switch (choice) {
+                case 1:
+                    staffInterface.displayLine(
+                    "Showing status:\n" +
+                    "1. COMINGSOON\n" +
+                    "2. PREVIEW\n" +
+                    "3. NOWSHOWING\n" +
+                    "4. ENDOFSHOWING");
+                    MovieInfo.ShowingStatus showingStatus = MovieInfo.ShowingStatus.valueOf(staffInterface.scanString("Please enter one of the above without space in between: ").toUpperCase());
+                    newMovieInfo.setShowingStatus(showingStatus);
+                    break;
+                case 2:
+                    staffInterface.displayLine(
+                    "Type of movie:\n" +
+                    "1. THREED\n" +
+                    "2. BLOCKBUSTER\n" +
+                    "3. NORMAL");
+                    MovieInfo.TypeOfMovie typeOfMovie = MovieInfo.TypeOfMovie.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+                    newMovieInfo.setTypeOfMovie(typeOfMovie);
+                    break;
+                case 3:
+                    synopsis = staffInterface.scanLine("Input new synopsis: ");
+                    newMovieInfo.setSynopsis(synopsis);
+                    break;
+                default:
+                    staffInterface.displayLine("Wrong input, please try again");
+            }
+        }
+
+        movies.set(movies.indexOf(movieToUpdate), newMovieInfo);
     }
     /**
-     * Gets the list of cinemas in a cineplex
-     * @return the list of cinemas in a cineplex
+     * Remove movie listing
      */
-    public Cinema[] listAllCinemas(Cineplex cineplex) {
-        return cineplex.getCinemas();
+    public void removeMovieListing() {
+        int index;
+        MovieInfo movieToRemove;
+
+        index = listAndSelectMovie();
+        movieToRemove = movies.get(index);
+
+        for (MovieShowing movieshowing: movieShowings) {
+            if (movieshowing.getMovie().getTitle().equals(movieToRemove.getTitle())) {
+                movieShowings.remove(movieShowings.indexOf(movieshowing));
+            }
+        }
+        movieToRemove.setShowingStatus(MovieInfo.ShowingStatus.ENDOFSHOWING);
     }
     /**
-     * Gets the list of all cineplexes
-     * @return the list of all cineplexes
+     * Creat movie Showing list
      */
-    public ArrayList<Cineplex> listAllCineplexes() {
-        return (ArrayList<Cineplex>)cineplexes;
+    public void createMovieShowing() {
+        MovieInfo movie;
+        Cinema cinema;
+        Cineplex cineplex;
+        String showTimeString;
+        Date showTime = null;
+        int index;
+
+        index = listAndSelectMovie();
+        movie = movies.get(index);
+
+        index = listAndSelectCineplex();
+        cineplex = cineplexes.get(index);
+
+        index = listAndSelectCinema(cineplex);
+        cinema = cineplex.getCinemas()[index];
+
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        while (true) {
+            showTimeString = staffInterface.scanLine("Input showtime in format DD/MM/YYYY HH:MM: ");
+            try {
+                showTime = fmt.parse(showTimeString);
+                break;
+            } catch (ParseException e) {
+                staffInterface.displayLine("Wrong format, please try again");
+            }
+        }
+
+        movieShowings.add(new MovieShowing(movie, cinema, cineplex, showTime));
     }
     /**
-     * User searches movie information with movie index
-     * Return the movie information with given index
-     * @param index index of the movie
-     * @return The required movie information
+     * Update movie showing list
      */
-    public MovieInfo searchForMovie(int index) {
-        return movies.get(index);
+    public void updateMovieShowing() {
+        int index;
+        String newShowTimeString;
+        Date newShowTime = null;
+        MovieShowing movieShowingToUpdate;
+
+        index = listAndSelectMovieShowing();
+        movieShowingToUpdate = movieShowings.get(index);
+
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        while (true) {
+            newShowTimeString = staffInterface.scanLine("Input the new show time in format DD/MM/YYYY HH:MM: ");
+            try {
+                newShowTime = fmt.parse(newShowTimeString);
+                break;
+            } catch (ParseException e) {
+                staffInterface.displayLine("Wrong format, please try again");
+            }
+        }
+
+        movieShowingToUpdate.setShowTime(newShowTime);
     }
     /**
-     * User searches showing movie with movie index
-     * Return the showing movie information with given index
-     * @param index index of the showing movie
-     * @return The required showing movie information
+     * Remove movie showing
      */
-    public MovieShowing searchForMovieShowing(int index) {
-        return movieShowings.get(index);
+    public void removeMovieShowing() {
+        int index;
+        MovieShowing movieShowingToRemove;
+
+        index = listAndSelectMovieShowing();
+        movieShowingToRemove = movieShowings.get(index);
+        movieShowings.remove(movieShowings.indexOf(movieShowingToRemove));
     }
     /**
-     * User searches cinema with movie index
-     * return the cinema with given index
-     * @param index The index of the cinema
-     * @return The required cinema
+     * Update the base price of the movie
      */
-    public Cinema searchForCinema(int index, Cineplex cineplex) {
-        return cineplex.getCinemas()[index];
+    public void updateTicketPrice() {
+        int index;
+        double price;
+        MovieInfo movieToUpdate;
+
+        index = listAndSelectMovie();
+        movieToUpdate = movies.get(index);
+
+        price = staffInterface.scanDouble("Please input the new base price: ");
+        movieToUpdate.setBasePrice(price);
     }
     /**
-     * User searches cineplex with cineplex index
-     * return the cineplex with given index
-     * @param index The index of cineplex
-     * @return The required cineplex
+     * Add holiday
      */
-    public Cineplex searchForCineplex(int index) {
-        return cineplexes.get(index);
+    public void addHoliday() {
+        String holidayString;
+        Date holiday;
+
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+        while (true) {
+            holidayString = staffInterface.scanString("Input a holiday date in the format DD/MM/YYYY: ");
+            try {
+                holiday = fmt.parse(holidayString);
+                break;
+            } catch (ParseException e) {
+                staffInterface.displayLine("Wrong format, please try again");
+            }
+        }
+        holidays.add(holiday);
     }
     /**
-     * Updates the showing status of the movie
-     * @param movieToUpdate The movie needs to be updated
-     * @param showingStatus The new showing status of the movie
+     * Logout
      */
-    public void updateShowingStatus(MovieInfo movieToUpdate, MovieInfo.ShowingStatus showingStatus) {
-        movieToUpdate.setShowingStatus(showingStatus);
+    public void logout() {
+        if (loggedIn) {
+            loggedIn = false;
+            User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
+            staffInterface.displayLine("Logout successful");
+        }
     }
     /**
-     * Updates the type of the movie
-     * @param movieToUpdate The movie needs to be updated
-     * @param typeOfMovie The new type of the movie
+     * List and select movie to modify
+     * @return the movie index
      */
-    public void updateTypeOfMovie(MovieInfo movieToUpdate, MovieInfo.TypeOfMovie typeOfMovie) {
-        movieToUpdate.setTypeOfMovie(typeOfMovie);
+    public int listAndSelectMovie() {
+        int index;
+
+        for (MovieInfo movie: movies) {
+            staffInterface.displayLine(movies.indexOf(movie) + ". " + movie.getTitle());
+        }
+        index = staffInterface.scanInteger("Please input the movie id: ");
+
+        return index;
     }
     /**
-     * Updates the synopsis of the movie
-     * @param movieToUpdate The movie needs to be updated
-     * @param synopsis The new synopsis of the movie
+     * List and select movie on showing to modify
+     * @return the movie index
      */
-    public void updateSynopsis(MovieInfo movieToUpdate, String synopsis) {
-        movieToUpdate.setSynopsis(synopsis);
+    public int listAndSelectMovieShowing() {
+        int index;
+
+        for (MovieShowing movieShowing: movieShowings) {
+            staffInterface.displayLine(movieShowings.indexOf(movieShowing) + ". " + movieShowing.toString());
+        }
+        index = staffInterface.scanInteger("Please input id of the movie showing: ");
+
+        return index;
+    }
+    /**
+     * List and select the cimeplex to modify
+     * @return the cineplex index
+     */
+    private int listAndSelectCineplex() {
+        int index;
+
+        for (Cineplex cineplex: cineplexes) {
+            staffInterface.displayLine(cineplexes.indexOf(cineplex) + ". " + cineplex.toString());
+        }
+        index = staffInterface.scanInteger("Please input id of the cineplex: ");
+
+        return index;
+    }
+    /**
+     * List and select the cinema to modify
+     * @param cineplex the cineplex that staff chooses to showing the movie
+     * @return the cinema index
+     */
+    private int listAndSelectCinema(Cineplex cineplex) {
+        Cinema[] cinemas = cineplex.getCinemas();
+        int index, i;
+
+        for (i=0; i<cinemas.length; ++i) {
+            staffInterface.displayLine(i + ". " + cinemas[i].toString());
+        }
+        index = staffInterface.scanInteger("Please input id of the cinema: ");
+
+        return index;
     }
     /**
      * Admin login
@@ -222,131 +432,10 @@ public class StaffController extends UserController {
         }
     }
     /**
-     * Admin logout
-     * @return The logout feedback
-     */
-    public LogoutFeedback logout() {
-        if (loggedIn) {
-            loggedIn = false;
-            User.getInstance().setTypeOfUser(TypeOfUser.MOVIEGOER);
-            return LogoutFeedback.LOGOUTSUCCESS;
-        } else {
-            return LogoutFeedback.ALREADYLOGGEDOUT;
-        }
-    }
-    /**
-     * Creates the new movie into the movie list
-     * @param movie The new movie
-     */
-    public void createMovieListing(MovieInfo movie) {
-        movies.add(movie);
-    }
-    /**
-     * Updates the movie information in the movie list
-     * @param oldMovie The movie needs to be updated
-     * @param newMovie The new movie information
-     */
-    public void updateMovieListing(MovieInfo oldMovie, MovieInfo newMovie) {
-        int index = movies.indexOf(oldMovie);
-        movies.set(index, newMovie);
-    }
-    /**
-     * Removes the movie from the movie list
-     * @param movie The movie needs to be removed
-     */
-    public void removeMovieListing(MovieInfo movie) {
-        int index;
-        for (MovieShowing movieshowing: movieShowings) {
-            if (movieshowing.getMovie().equals(movie)) {
-                index = movieShowings.indexOf(movieshowing);
-                movieShowings.remove(index);
-            }
-        }
-        movie.setShowingStatus(MovieInfo.ShowingStatus.ENDOFSHOWING);
-    }
-    /**
-     * Creates the new showing movie into the movie showing list
-     * @param movieShowing The new showing movie
-     */
-    public void createMovieShowing(MovieShowing movieShowing) {
-        movieShowings.add(movieShowing);
-    }
-    /**
-     * Updates the show time of the movie to be shown
-     * @param newShowTime The new show time
-     * @param movieShowingToUpdate The showing movie needs to be updated
-     */
-    public void updateMovieShowing(Date newShowTime, MovieShowing movieShowingToUpdate) {
-        movieShowingToUpdate.setShowTime(newShowTime);
-    }
-    /**
-     * Removes the showing movie from the list
-     * @param movieShowing The showing movie needs to be removed
-     */
-    public void removeMovieShowing(MovieShowing movieShowing) {
-        int index = movieShowings.indexOf(movieShowing);
-        movieShowings.remove(index);
-    }
-    /**
      * Gets the sale report
      * @return The list of all movie information
      */
     public ArrayList<MovieInfo> getSaleReport() {
         return (ArrayList<MovieInfo>)movies;
-    }
-    /**
-     * Updates the ticket price for the movie in the movie list
-     * @param movie The movie needs to be updated
-     * @param price The new ticket price
-     */
-    public void updateTicketPrice(MovieInfo movie, double price) {
-        movie.setBasePrice(price);
-    }
-    /**
-     * Adds new holiday date into the holiday list
-     * @param holiday The new holiday date
-     */
-    public void createHoliday(Date holiday) {
-        holidays.add(holiday);
-    }
-    /**
-     * Gets the top 5 movies according to their sales
-     * @return The top 5 movies
-     */
-    public List<MovieInfo> getTop5BySale() {
-        Collections.sort(movies, new Comparator<MovieInfo>() {
-            @Override
-            public int compare(MovieInfo movie1, MovieInfo movie2) {
-                return movie2.getSale() - movie1.getSale();
-            }
-        });
-
-        if (movies.size() < 5) {
-            return movies;
-        } else {
-            return movies.subList(0, 5);
-        }
-    }
-    /**
-     * Gets the top 5 movies according to their rating
-     * @return The top 5 movies
-     */
-    public List<MovieInfo> getTop5ByRating() {
-        Collections.sort(movies, new Comparator<MovieInfo>() {
-            @Override
-            public int compare(MovieInfo movie1, MovieInfo movie2) {
-                if (movie2.getOverallRating() > movie1.getOverallRating()) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            }
-        });
-
-        if (movies.size() < 5) {
-            return movies;
-        } else {
-            return movies.subList(0, 5);
-        }
     }
 }

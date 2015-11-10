@@ -1,2 +1,2 @@
 *.class
-/src/Project/nbproject/private/
+.idea/

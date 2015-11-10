@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
  * the cinema where the movie is showing at,
  * the cineplex where the movie is showing at and
  * the show time when the movie is showing
- * @authos SSP2 Team 1
+ * @author SSP2 Team 1
  */
 public class MovieShowing {
     /**
@@ -51,7 +51,12 @@ public class MovieShowing {
      */
     public String toString() {
         SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-        return "Movie title: " + movie.getTitle() + "\nCinema code: " + cinema.toString() + "\nCineplex: " + cineplex.toString() + "\nShow time: " + fmt.format(showTime);
+        return "Movie title: " + movie.getTitle() +
+               "\nType of movie: " + movie.getTypeOfMovie() +
+               "\nCinema code: " + cinema.toString() +
+               "\nCinema class: " + cinema.getClassOfCinema() +
+               "\nCineplex: " + cineplex.toString() +
+               "\nShow time: " + fmt.format(showTime);
     }
     /**
      * Gets the cinema where the movie is showing at

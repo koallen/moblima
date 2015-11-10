@@ -1,57 +1,93 @@
 package moblima.boundary;
 
-/**
- * Represent the interface for user
- * This interface set the user as movie-goer 
- * and then start the interacting with user
- * @author SSP2 Team 1
- */
+import java.util.Scanner;
+import java.util.InputMismatchException;
 
-import moblima.entity.User;
+public abstract class UserInterface {
+    public Scanner sc = new Scanner(System.in);
 
-public class UserInterface {
-    /**
-     * The UserInterface is created by itself
-     * Since UserInterface is a singleton class
-     * It can only be created by itself
-     */
-    private static UserInterface userInterface = null;
+    public abstract void print();
 
-    /**
-     * To avoids other class to create a user interface
-     * It can only be created by itself
-     */
-    private UserInterface() {}
+    public abstract void interact();
 
-    /**
-     * Gets a user interface
-     * If user interface has not been created yet
-     * create a new user interface then return it
-     * @return the user interface
-     */
-    public static UserInterface getInstance() {
-        if (userInterface == null) {
-            userInterface = new UserInterface();
-        }
-        return userInterface;
+    public void displayLine(String message) {
+        System.out.println(message);
     }
 
-    /**
-     * Start the interacting with user
-     * that by default is movie-goer
-     */
-    public void start() {
-        System.out.println("Starting MOBLIMA...");
-        User currentUser = User.getInstance();
-        // start interacting with user
-        while (currentUser.isActive()) {
-            if (currentUser.isMovieGoer()) {
-                MovieGoerInterface.getInstance().interact();
-            } else {
-                StaffInterface.getInstance().interact();
-            }
-        }
+    public void display(String message) {
+        System.out.print(message);
+    }
 
-        System.out.println("Terminating MOBLIMA...");
+    public int scanInteger(String message) {
+        int result;
+
+        while (true) {
+            System.out.print(message);
+            try {
+                result = sc.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input, please try again");
+            }
+            sc.nextLine();
+        }
+        sc.nextLine();
+
+        return result;
+    }
+
+    public double scanDouble(String message) {
+        double result;
+
+        while (true) {
+            System.out.print(message);
+            try {
+                result = sc.nextDouble();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input, please try again");
+            }
+            sc.nextLine();
+        }
+        sc.nextLine();
+
+        return result;
+    }
+
+    public String scanString(String message) {
+        String result;
+
+        System.out.print(message);
+        result = sc.next();
+        sc.nextLine();
+
+        return result;
+    }
+
+    public String scanLine(String message) {
+        String result;
+
+        System.out.print(message);
+        result = sc.nextLine();
+
+        return result;
+    }
+
+    public boolean scanBoolean(String message) {
+        boolean result;
+
+        while (true) {
+            System.out.print(message);
+            try {
+                result = sc.nextBoolean();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input, please try again");
+            }
+            sc.nextLine();
+        }
+        sc.nextLine();
+
+        return result;
     }
 }

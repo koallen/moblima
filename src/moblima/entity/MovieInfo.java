@@ -108,7 +108,7 @@ public class MovieInfo implements Cloneable {
 
     public String toString() {
         if (pastReviews.size() < 2) {
-            String overallRating = "NA";
+            return "Title: " + title + "\nShowing status: " + showingStatus + "\nRating: " + rating + "\nSynopsis: " + synopsis + "\nViewer rating: NA";
         }
         return "Title: " + title + "\nShowing status: " + showingStatus + "\nRating: " + rating + "\nSynopsis: " + synopsis + "\nViewer rating: " + overallRating;
     }
@@ -205,7 +205,7 @@ public class MovieInfo implements Cloneable {
     }
     /**
      * Add new reviews for this movie
-     * @param viewerReview
+     * @param viewerReview A review object containing contents and rating
      */
     public void addReview(Review viewerReview) {
         pastReviews.add(viewerReview);

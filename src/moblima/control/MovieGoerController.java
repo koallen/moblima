@@ -1,7 +1,13 @@
 package moblima.control;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Collections;
+import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.lang.IndexOutOfBoundsException;
+import moblima.entity.User;
 import moblima.entity.Seat;
 import moblima.entity.Review;
 import moblima.entity.Booking;
@@ -10,6 +16,9 @@ import moblima.entity.Cinema;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieTicket;
 import moblima.entity.MovieShowing;
+import moblima.boundary.MovieGoerInterface;
+import moblima.control.StaffController.LoginFeedback;
+
 /**
  * Represents a controller for all moviegoer module functions
  * The moviegoer module functions include Search/List movie
@@ -20,7 +29,7 @@ import moblima.entity.MovieShowing;
  * List the Top 5 ranking by ticket sales OR by overall reviewers’ ratings
  * @author SSP2 Team1
  */
-public class MovieGoerController extends UserController{
+public class MovieGoerController extends UserController {
     /**
      * The moviegoer controller created by itself
      * Since MovieGoerController is a singleton class
@@ -28,31 +37,30 @@ public class MovieGoerController extends UserController{
      */
     private static MovieGoerController movieGoerController = null;
     /**
+     *
+     */
+    private MovieGoerInterface movieGoerInterface = MovieGoerInterface.getInstance();
+    /**
      * The list of the holiday dates
      */
-    private List<Date> holidays;
+    private List<Date> holidays = null;
     /**
      * The list of all movie informations
      */
-    private List<MovieInfo> movies;
+    private List<MovieInfo> movies = null;
     /**
      * The list of booking records
      */
-    private List<Booking> bookings;
+    private List<Booking> bookings = null;
     /**
      * The list of the information for movies to be shown
      */
-    private List<MovieShowing> movieShowings;
+    private List<MovieShowing> movieShowings = null;
     /**
      * To avoids other classes to create a moviegoer controller
      * It can only be created by itself
      */
-    private MovieGoerController() {
-        this.holidays = null;
-        this.movies = null;
-        this.bookings = null;
-        this.movieShowings = null;
-    }
+    private MovieGoerController() {}
     /**
      * Gets a moviegoer controller
      * If moviegoer controller has not been created yet,
@@ -81,37 +89,318 @@ public class MovieGoerController extends UserController{
         this.movieShowings = movieShowings;
     }
     /**
-     * Gets the showing movie with given index
-     * @param choice The index of the showing movie
-     * @return The required showing movie
+     * Book a movie ticket
+     * let user choose the movie
+     * check whether the ticket is avaliable
+     * If ticket is avaliable
+     * choose the seats
+     * and complete the booking
+     * with name email and mobile phone number
      */
-    public MovieShowing getMovies(int choice){
-        return movieShowings.get(choice);
+    public void bookAMovie() {
+        String movieName, movieGoerName, bookingId, name, email, mobileNumber, transactionID;
+        int index, row, col;
+        double price;
+        boolean discount;
+        MovieInfo movieToBook;
+        MovieShowing movieShowing;
+        List<MovieInfo> searchResult;
+        List<MovieShowing> movieShowings;
+        Seat[][] seats;
+        Seat seat;
+
+        searchResult = searchMovies();
+        if (searchResult.size() == 0) {
+            return;
+        }
+
+        while (true) {
+            index = movieGoerInterface.scanInteger("Input the movie id that you want to book: ");
+            // catch array exception
+            try {
+                movieToBook = searchResult.get(index);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                movieGoerInterface.displayLine("Wrong index, please try again");
+            }
+        }
+
+        movieShowings = listMovieShowing(movieToBook);
+        if (movieShowings.size() == 0) {
+            movieGoerInterface.displayLine("The movie isn't showing now");
+            return;
+        }
+        for (MovieShowing show: movieShowings) {
+            movieGoerInterface.displayLine(movieShowings.indexOf(show) + ".\n" + show.toString());
+        }
+
+        while (true) {
+            index = movieGoerInterface.scanInteger("Input the showing id that you want to book: ");
+            // catch array exception
+            try {
+                movieShowing = movieShowings.get(index);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                movieGoerInterface.displayLine("Wrong index, please try again");
+            }
+        }
+
+        seats = getSeats(movieShowing);
+        printLayout(seats);
+
+        movieGoerInterface.displayLine("Which seat do you want?");
+        while (true) {
+            row = movieGoerInterface.scanInteger("Input row: ");
+            col = movieGoerInterface.scanInteger("Input col: ");
+            // catch array errors
+            try {
+                seat = selectSeat(movieShowing, row, col);
+            } catch (IndexOutOfBoundsException e) {
+                movieGoerInterface.displayLine("Wrong row or column number, please try again");
+                continue;
+            }
+            if (seat != null) {
+                movieGoerInterface.displayLine("Seat successfully taken");
+                break;
+            }
+            movieGoerInterface.displayLine("Seat selection unsuccessful\nMake sure you select an empty seat");
+        }
+
+        discount = movieGoerInterface.scanBoolean("Are you a child or an elder? (true/false): ");
+
+        price = calculatePrice(movieShowing, discount);
+        movieGoerInterface.displayLine("The movie price is " + price);
+
+        name = movieGoerInterface.scanLine("Please input your name: ");
+        mobileNumber = movieGoerInterface.scanString("Please input your mobile number: ");
+        email = movieGoerInterface.scanString("Please input your email address: ");
+
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmm");
+        transactionID = movieShowing.getCinema().getCinemaCode() + fmt.format(new Date());
+
+        bookings.add(new Booking(new MovieTicket(movieShowing, seat, price), new Payment(transactionID, name, mobileNumber, email, price)));
+        movieToBook.setSale(movieToBook.getSale()+1);
+
+        movieGoerInterface.displayLine("Booking successful");
     }
     /**
-     * Gets the list of all movies
-     * @return the list of all movies
+     * Search movies
+     * @return An ArrayList of MovieInfo
      */
-    public ArrayList<MovieInfo> listAllMovies(){
-        return (ArrayList<MovieInfo>)movies;
+    public ArrayList<MovieInfo> searchMovies() {
+        ArrayList<MovieInfo> searchResult = new ArrayList<MovieInfo>();
+        String movieName;
+
+        movieName = movieGoerInterface.scanLine("Please input the movie name: ");
+
+        // search by name
+        for (MovieInfo movie: movies) {
+            if (movie.getTitle().toLowerCase().contains(movieName.toLowerCase())){
+                searchResult.add(movie);
+            }
+        }
+
+        // display result
+        if (searchResult.size() != 0) {
+            movieGoerInterface.displayLine("Search result:");
+            for (MovieInfo movie: searchResult) {
+                movieGoerInterface.displayLine(searchResult.indexOf(movie) + ". " + movie.getTitle());
+            }
+        } else {
+            movieGoerInterface.displayLine("No matching movie found!");
+        }
+
+        return searchResult;
     }
     /**
-     * User searches movie information with movie index
-     * Return the movie information with given index
-     * @param index index of the movie
-     * @return The required movie information
+     * View booking history of the input name
      */
-    public MovieInfo searchForMovie(int index) {
-        return movies.get(index);
+    public void viewBookingHistory() {
+        String movieGoerName;
+        ArrayList<Booking> bookingsByUser = new ArrayList<Booking>();
+
+        movieGoerName = movieGoerInterface.scanLine("Please input your name: ");
+
+        for (Booking booking: bookings){
+            if (booking.getPayment().getName().equals(movieGoerName)){
+                bookingsByUser.add(booking);
+            }
+        }
+
+        if (bookingsByUser.size() != 0) {
+            movieGoerInterface.displayLine("Here are your bookings:\n");
+            for (Booking booking: bookingsByUser) {
+                movieGoerInterface.displayLine(bookingsByUser.indexOf(booking) + ".\n" + booking.toString() + "\n");
+            }
+        } else {
+            movieGoerInterface.displayLine("No booking record found");
+        }
     }
     /**
-     * User searches showing movie with movie index
-     * Return the showing movie information with given index
-     * @param index index of the showing movie
-     * @return The required showing movie information
+     * Display detail movie info
      */
-    public MovieShowing searchForMovieShowing(int index) {
-        return movieShowings.get(index);
+    public void searchAndDisplayMovieInfo() {
+        List<MovieInfo> movies = searchMovies();
+        if (movies.size() == 0) {
+            return;
+        }
+        List<Review> reviews;
+        int index;
+
+        while (true) {
+            index = movieGoerInterface.scanInteger("Please input the movie id: ");
+            // catch array errors
+            try {
+                reviews = movies.get(index).getPastReviews();
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                movieGoerInterface.displayLine("Wrong index, please try again");
+            }
+        }
+
+        movieGoerInterface.displayLine(movies.get(index).toString());
+        movieGoerInterface.displayLine("Past reviews");
+        for (Review review: reviews) {
+            movieGoerInterface.displayLine(reviews.indexOf(review) + ".\nContent: " + review.getContent() + "\nRating: " + review.getRating());
+        }
+    }
+    /**
+     * Add review to the movie
+     */
+    public void addReview() {
+        List<MovieInfo> results = searchMovies();
+        if (results.size() == 0) {
+            return;
+        }
+        int index, rating;
+        String content;
+        MovieInfo movie;
+
+        while (true) {
+            index = movieGoerInterface.scanInteger("Please input the movie id: ");
+            // catch array error
+            try {
+                movie = results.get(index);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                movieGoerInterface.displayLine("Wrong index, please try again");
+            }
+        }
+
+        content = movieGoerInterface.scanLine("Please input review content:");
+        while (true) {
+            rating = movieGoerInterface.scanInteger("Please input review rating (0-5): ");
+            if (rating > 5 || rating < 0) {
+                break;
+            } else {
+                movieGoerInterface.displayLine("Rating out of range, please try again");
+            }
+        }
+
+        movie.addReview(new Review(content, rating));
+        calculateOverallRating(movie);
+
+        movieGoerInterface.displayLine("Review successfully added");
+    }
+    /**
+     * Log in as staff
+     * Check the username and password
+     * Check whether the user already logged in
+     */
+    public void loginAsStaff() {
+        String username, password;
+
+        username = movieGoerInterface.scanString("Input username: ");
+        password = movieGoerInterface.scanString("Input password: ");
+
+        LoginFeedback feedback = StaffController.getInstance().login(username, password);
+        switch (feedback) {
+            case LOGINSUCCESS:
+                movieGoerInterface.displayLine("Login successful");
+                break;
+            case ALREADYLOGGEDIN:
+                break;
+            case WRONGUSERNAMEPASSWORD:
+                movieGoerInterface.displayLine("Wrong username or password, please try again");
+                break;
+            default:
+                break;
+        }
+    }
+    /**
+     * Print the seat layout of the cinema
+     * that is showing the movie
+     * @param seats All seats in a cinema
+     */
+    public void printLayout(Seat[][] seats){
+        for (int i = 0; i < seats.length; i++){
+            for(int j = 0; j < seats[i].length; j++){
+                movieGoerInterface.display(seats[i][j].toString());
+            }
+            movieGoerInterface.displayLine("");
+        }
+    }
+    /**
+     * List all movies
+     */
+    public void listAllMovies(){
+        movieGoerInterface.displayLine("This is the list of all movies");
+        for (MovieInfo movie: movies){
+            movieGoerInterface.displayLine(movies.indexOf(movie) + ". " + movie.getTitle());
+        }
+    }
+    /**
+     * List top 5 by sale
+     */
+    public void listTop5BySale() {
+        List<MovieInfo> topMovies = null;
+
+        // sort the movies by sale
+        Collections.sort(movies, new Comparator<MovieInfo>() {
+            @Override
+            public int compare(MovieInfo movie1, MovieInfo movie2) {
+                return movie2.getSale() - movie1.getSale();
+            }
+        });
+
+        if (movies.size() < 5) {
+            topMovies = movies;
+        } else {
+            topMovies = movies.subList(0, 5);
+        }
+
+        movieGoerInterface.displayLine("The top 5 movies by sale are:");
+        for (MovieInfo movie: topMovies) {
+            movieGoerInterface.displayLine(movies.indexOf(movie) + ". " + movie.getTitle());
+        }
+    }
+    /**
+     * List top 5 by rating
+     */
+    public void listTop5ByRating() {
+        List<MovieInfo> topMovies = null;
+
+        // sort the movies by sale
+        Collections.sort(movies, new Comparator<MovieInfo>() {
+            @Override
+            public int compare(MovieInfo movie1, MovieInfo movie2) {
+                if (movie2.getOverallRating() > movie1.getOverallRating()) {
+                    return 1;
+                }
+                return -1;
+            }
+        });
+
+        if (movies.size() < 5) {
+            topMovies = movies;
+        } else {
+            topMovies = movies.subList(0, 5);
+        }
+
+        movieGoerInterface.displayLine("The top 5 movies by rating are:");
+        for (MovieInfo movie: topMovies) {
+            movieGoerInterface.displayLine(movies.indexOf(movie) + ". " + movie.getTitle());
+        }
     }
     /**
      * Lists all the showing information of a movie
@@ -130,17 +419,10 @@ public class MovieGoerController extends UserController{
     /**
      * Gets the seat information of a movie showing
      * @param movieShowing The movie showing which the seat information is wanted
+     * @return A 2D seat array
      */
     public Seat[][] getSeats(MovieShowing movieShowing) {
         return movieShowing.getCinema().getSeatLayout();
-    }
-    /**
-     * Gets the movie details of a movie
-     * @param movieName The name of the movie
-     */
-    public void viewMovieDetail(String movieName) {
-        //MovieInfo movie = search(movieName);
-        //movie.toString();
     }
     /**
      * Select seat during booking
@@ -149,7 +431,7 @@ public class MovieGoerController extends UserController{
      * @param col The colume of seats which user chooses to book
      * @return The seat selected
      */
-    public Seat selectSeat(MovieShowing movieShowing, int row, int col){
+    public Seat selectSeat(MovieShowing movieShowing, int row, int col) throws IndexOutOfBoundsException {
         Seat[][] seats = movieShowing.getCinema().getSeatLayout();
         Seat seat = null;
         int i, count = 0;
@@ -166,31 +448,13 @@ public class MovieGoerController extends UserController{
             }
         }
 
-        if (seat.getStatus() == Seat.enumSeat.TAKEN) {
-            //System.out.println("This seat is taken, please choose another one.");
-            return null;
-        }
-        else if (seat.getStatus() == Seat.enumSeat.NOTTAKEN) {
+        if (seat.getStatus() == Seat.enumSeat.NOTTAKEN) {
             seat.setStatus(Seat.enumSeat.TAKEN);
             seat.setID(row, col);
-            //System.out.println("Seat is successfully taken");
             return seat;
-        }
-        else {
-            //System.out.println("Error");
+        } else {
             return null;
         }
-
-    }
-    /**
-     * Books a ticket and purchases it
-     * @param movieTicket THe ticket users want to book
-     * @param payment The payment information of that ticket
-     */
-    public void book(MovieTicket movieTicket, Payment payment, MovieInfo movie){
-        Booking booking = new Booking(movieTicket, payment);
-        bookings.add(booking);
-        movie.setSale(movie.getSale()+1);
 
     }
     /**
@@ -244,47 +508,5 @@ public class MovieGoerController extends UserController{
         }
 
         return price;
-    }
-    /**
-     * Gets the booking history of the user
-     * @param userName The name of the user
-     * @return The list of booking records of that person
-     */
-    public ArrayList<Booking> getBookingHistory(String userName) {
-        ArrayList<Booking> bookingsByUser = new ArrayList<Booking>();
-        for (Booking booking: bookings){
-            if (booking.getPayment().getName().equals(userName)){
-                bookingsByUser.add(booking);
-            }
-        }
-        return bookingsByUser;
-    }
-    /**
-     * Create movie review for a movie
-     * users can fill in comments and rating
-     * @param movie The movie which user wants to comment
-     */
-    public void createMovieReview(MovieInfo movie) {
-        System.out.println("Please input the review");
-        Scanner sc = new Scanner(System.in);
-        String reviewstr = sc.next();
-        System.out.println("Please input the rating");
-        int rating = sc.nextInt();
-        Review review = new Review(reviewstr,rating);
-        movie.getPastReviews().add(review);
-    }
-    /**
-     * Search a movie with given movie name keyword
-     * @param movieName The movie name keyword
-     * @return The information of the movie searched
-     */
-    public ArrayList<MovieInfo> search(String movieName){
-        ArrayList<MovieInfo> searchResult = new ArrayList<MovieInfo>();
-        for (MovieInfo movie: movies) {
-            if (movie.getTitle().toLowerCase().contains(movieName.toLowerCase())){
-                searchResult.add(movie);
-            }
-        }
-        return searchResult;
     }
 }

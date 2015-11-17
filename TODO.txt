@@ -1,5 +1,0 @@
-sale report
-
-class diagram enumeration
-
-sequence diagram review

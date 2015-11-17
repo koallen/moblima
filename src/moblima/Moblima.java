@@ -9,6 +9,7 @@ import moblima.control.MainController;
 public class Moblima {
     /**
      * Starts the main controller
+     * @param args Additional arguments to be passed in
      */
     public static void main(String[] args) {
         MainController.start();

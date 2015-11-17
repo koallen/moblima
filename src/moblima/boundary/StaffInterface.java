@@ -73,12 +73,15 @@ public class StaffInterface extends UserInterface {
                 staffController.updateTicketPrice();
                 break;
             case 8:
-                staffController.addHoliday();
+                staffController.getSaleReport();
                 break;
             case 9:
-                staffController.logout();
+                staffController.addHoliday();
                 break;
             case 10:
+                staffController.logout();
+                break;
+            case 11:
                 staffController.exit();
                 break;
             default:
@@ -99,8 +102,9 @@ public class StaffInterface extends UserInterface {
         "5. Update cinema showtime\n" +
         "6. Remove cinema showtime\n" +
         "7. Change movie base price\n" +
-        "8. Add holiday\n" +
-        "9. Logout\n" +
-        "10. Exit");
+        "8. Get sale report\n" +
+        "9. Add holiday\n" +
+        "10. Logout\n" +
+        "11. Exit");
     }
 }

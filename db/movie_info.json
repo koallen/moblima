@@ -50,7 +50,7 @@
       "Joseph Gordon-Levitt",
       "Ben Kingsley"
     ],
-    "overallRating": 4.5,
+    "overallRating": 4.75,
     "pastReviews": [
       {
         "content": "A word of caution : People with vertigo or acrophobia should really think twice before watching this movie.",
@@ -58,6 +58,14 @@
       },
       {
         "content": "Best Family Movie Of 2015.",
+        "rating": 5
+      },
+      {
+        "content": "This is the best movie ever.",
+        "rating": 5
+      },
+      {
+        "content": "This movie is really nice. I love it.",
         "rating": 5
       }
     ],
@@ -104,7 +112,7 @@
       "Dewi Chien",
       "Darren Wang"
     ],
-    "overallRating": 4.5,
+    "overallRating": 4.666666666666667,
     "pastReviews": [
       {
         "content": "A truly magical journey that will leave you breathless and crying",
@@ -113,6 +121,10 @@
       {
         "content": "A Simple Story of First Love, Poison Chain Letters and Teenage Idols That is Well-Cast, Well-Acted, Well-Written and Thoughtfully Made",
         "rating": 4
+      },
+      {
+        "content": "I like this movie. It\u0027s really GOOD.",
+        "rating": 5
       }
     ],
     "basePrice": 12.0,

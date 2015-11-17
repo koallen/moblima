@@ -3,6 +3,8 @@ package moblima.control;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
+import java.util.TreeMap;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import moblima.entity.User;
@@ -119,7 +121,7 @@ public class StaffController extends UserController {
         List<Review> pastReviews;
         MovieInfo.Rating rating;
 
-        title = staffInterface.scanString("Input movie title: ");
+        title = staffInterface.scanLine("Input movie title: ");
 
         staffInterface.displayLine(
         "Showing status:\n" +
@@ -127,14 +129,32 @@ public class StaffController extends UserController {
         "2. PREVIEW\n" +
         "3. NOWSHOWING\n" +
         "4. ENDOFSHOWING");
-        showingStatus = MovieInfo.ShowingStatus.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+        while (true) {
+            try {
+                showingStatus = MovieInfo.ShowingStatus.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+                break;
+            } catch (IllegalArgumentException e) {
+                staffInterface.displayLine("Wrong input, please try again");
+            } catch (NullPointerException e) {
+                staffInterface.displayLine("Wrong input, please try again");
+            }
+        }
 
         staffInterface.displayLine(
         "Type of movie:\n" +
         "1. THREED\n" +
         "2. BLOCKBUSTER\n" +
         "3. NORMAL");
-        typeOfMovie = MovieInfo.TypeOfMovie.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+        while (true) {
+            try {
+                typeOfMovie = MovieInfo.TypeOfMovie.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+                break;
+            } catch (IllegalArgumentException e) {
+                staffInterface.displayLine("Wrong input, please try again");
+            } catch (NullPointerException e) {
+                staffInterface.displayLine("Wrong input, please try again");
+            }
+        }
 
         synopsis = staffInterface.scanLine("Input synopsis: ");
 
@@ -160,7 +180,16 @@ public class StaffController extends UserController {
         staffInterface.displayLine(
         "Movie ratings:\n" +
         "G, PG, PG13, NC16, M18, R21");
-        rating = MovieInfo.Rating.valueOf(staffInterface.scanString("Please enter one the of above: ").toUpperCase());
+        while (true) {
+            try {
+                rating = MovieInfo.Rating.valueOf(staffInterface.scanString("Please enter one the of above: ").toUpperCase());
+                break;
+            } catch (IllegalArgumentException e) {
+                staffInterface.displayLine("Wrong input, please try again");
+            } catch (NullPointerException e) {
+                staffInterface.displayLine("Wrong input, please try again");
+            }
+        }
 
         movie = new MovieInfo(title, showingStatus, typeOfMovie, synopsis, director, casts, 0.0, (ArrayList<Review>)pastReviews, basePrice, rating, 0);
         calculateOverallRating(movie);
@@ -197,7 +226,17 @@ public class StaffController extends UserController {
                     "2. PREVIEW\n" +
                     "3. NOWSHOWING\n" +
                     "4. ENDOFSHOWING");
-                    MovieInfo.ShowingStatus showingStatus = MovieInfo.ShowingStatus.valueOf(staffInterface.scanString("Please enter one of the above without space in between: ").toUpperCase());
+                    MovieInfo.ShowingStatus showingStatus;
+                    while (true) {
+                        try {
+                            showingStatus = MovieInfo.ShowingStatus.valueOf(staffInterface.scanString("Please enter one of the above without space in between: ").toUpperCase());
+                            break;
+                        } catch (IllegalArgumentException e) {
+                            staffInterface.displayLine("Wrong input, please try again");
+                        } catch (NullPointerException e) {
+                            staffInterface.displayLine("Wrong input, please try again");
+                        }
+                    }
                     newMovieInfo.setShowingStatus(showingStatus);
                     break;
                 case 2:
@@ -206,7 +245,17 @@ public class StaffController extends UserController {
                     "1. THREED\n" +
                     "2. BLOCKBUSTER\n" +
                     "3. NORMAL");
-                    MovieInfo.TypeOfMovie typeOfMovie = MovieInfo.TypeOfMovie.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+                    MovieInfo.TypeOfMovie typeOfMovie;
+                    while (true) {
+                        try {
+                            typeOfMovie = MovieInfo.TypeOfMovie.valueOf(staffInterface.scanString("Please enter one of the above: ").toUpperCase());
+                            break;
+                        } catch (IllegalArgumentException e) {
+                            staffInterface.displayLine("Wrong input, please try again");
+                        } catch (NullPointerException e) {
+                            staffInterface.displayLine("Wrong input, please try again");
+                        }
+                    }
                     newMovieInfo.setTypeOfMovie(typeOfMovie);
                     break;
                 case 3:
@@ -216,6 +265,14 @@ public class StaffController extends UserController {
                 default:
                     staffInterface.displayLine("Wrong input, please try again");
             }
+            staffInterface.displayLine(
+            "Choose the field that you want to change:\n" +
+            "1. Showing status\n" +
+            "2. Type of movie\n" +
+            "3. Synopsis\n" +
+            "4. Finish modifying");
+
+            choice = staffInterface.scanInteger("");
         }
 
         movies.set(movies.indexOf(movieToUpdate), newMovieInfo);
@@ -258,6 +315,7 @@ public class StaffController extends UserController {
         cinema = cineplex.getCinemas()[index];
 
         SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        fmt.setLenient(false);
         while (true) {
             showTimeString = staffInterface.scanLine("Input showtime in format DD/MM/YYYY HH:MM: ");
             try {
@@ -283,6 +341,7 @@ public class StaffController extends UserController {
         movieShowingToUpdate = movieShowings.get(index);
 
         SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        fmt.setLenient(false);
         while (true) {
             newShowTimeString = staffInterface.scanLine("Input the new show time in format DD/MM/YYYY HH:MM: ");
             try {
@@ -317,7 +376,15 @@ public class StaffController extends UserController {
         index = listAndSelectMovie();
         movieToUpdate = movies.get(index);
 
-        price = staffInterface.scanDouble("Please input the new base price: ");
+        while (true) {
+            price = staffInterface.scanDouble("Please input the new base price: ");
+            if (price > 0) {
+                break;
+            } else {
+                staffInterface.displayLine("Price cannot be non-positive, please try again");
+            }
+        }
+
         movieToUpdate.setBasePrice(price);
     }
     /**
@@ -328,6 +395,7 @@ public class StaffController extends UserController {
         Date holiday;
 
         SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+        fmt.setLenient(false);
         while (true) {
             holidayString = staffInterface.scanString("Input a holiday date in the format DD/MM/YYYY: ");
             try {
@@ -359,7 +427,16 @@ public class StaffController extends UserController {
         for (MovieInfo movie: movies) {
             staffInterface.displayLine(movies.indexOf(movie) + ". " + movie.getTitle());
         }
-        index = staffInterface.scanInteger("Please input the movie id: ");
+
+        while (true) {
+            try {
+                index = staffInterface.scanInteger("Please input the movie id: ");
+                movies.get(index);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                staffInterface.displayLine("Wrong index, please try again");
+            }
+        }
 
         return index;
     }
@@ -373,7 +450,16 @@ public class StaffController extends UserController {
         for (MovieShowing movieShowing: movieShowings) {
             staffInterface.displayLine(movieShowings.indexOf(movieShowing) + ". " + movieShowing.toString());
         }
-        index = staffInterface.scanInteger("Please input id of the movie showing: ");
+
+        while (true) {
+            try {
+                index = staffInterface.scanInteger("Please input id of the movie showing: ");
+                movieShowings.get(index);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                staffInterface.displayLine("Wrong index, please try again");
+            }
+        }
 
         return index;
     }
@@ -387,7 +473,16 @@ public class StaffController extends UserController {
         for (Cineplex cineplex: cineplexes) {
             staffInterface.displayLine(cineplexes.indexOf(cineplex) + ". " + cineplex.toString());
         }
-        index = staffInterface.scanInteger("Please input id of the cineplex: ");
+
+        while (true) {
+            try {
+                index = staffInterface.scanInteger("Please input id of the cineplex: ");
+                cineplexes.get(index);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                staffInterface.displayLine("Wrong index, please try again");
+            }
+        }
 
         return index;
     }
@@ -398,12 +493,22 @@ public class StaffController extends UserController {
      */
     private int listAndSelectCinema(Cineplex cineplex) {
         Cinema[] cinemas = cineplex.getCinemas();
+        Cinema cinema;
         int index, i;
 
         for (i=0; i<cinemas.length; ++i) {
             staffInterface.displayLine(i + ". " + cinemas[i].toString());
         }
-        index = staffInterface.scanInteger("Please input id of the cinema: ");
+
+        while (true) {
+            try {
+                index = staffInterface.scanInteger("Please input id of the cinema: ");
+                cinema = cinemas[index];
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                staffInterface.displayLine("Wrong index, please try again");
+            }
+        }
 
         return index;
     }
@@ -432,10 +537,37 @@ public class StaffController extends UserController {
         }
     }
     /**
-     * Gets the sale report
-     * @return The list of all movie information
+     * Generate the sale report
      */
-    public ArrayList<MovieInfo> getSaleReport() {
-        return (ArrayList<MovieInfo>)movies;
+    public void getSaleReport() {
+        Map<Date, Integer> saleReport = new TreeMap<Date, Integer>();
+        String dateString;
+        Date date = null;
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat fmt2 = new SimpleDateFormat("dd/MM/yyyy");
+
+        // loop throught all bookings to get sale stats
+        for (Booking booking: bookings) {
+            dateString = booking.getPayment().getTransactionID().substring(3, 11);
+            try {
+                date = fmt.parse(dateString);
+            } catch (ParseException e) {
+                staffInterface.displayLine("Error parsing date");
+            }
+            if (saleReport.containsKey(date)) {
+                saleReport.put(date, saleReport.get(date) + 1);
+            } else {
+                saleReport.put(date, 1);
+            }
+        }
+
+        staffInterface.displayLine("Sale report");
+        for (Date dateInSaleReport: saleReport.keySet()) {
+            if (saleReport.get(dateInSaleReport) > 1) {
+                staffInterface.displayLine(fmt2.format(dateInSaleReport) + ": " + saleReport.get(dateInSaleReport) + " tickets sold");
+            } else {
+                staffInterface.displayLine(fmt2.format(dateInSaleReport) + ": " + saleReport.get(dateInSaleReport) + " ticket sold");
+            }
+        }
     }
 }

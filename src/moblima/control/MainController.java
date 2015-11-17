@@ -11,7 +11,6 @@ import moblima.entity.Cinema;
 import moblima.entity.Cineplex;
 import moblima.entity.MovieInfo;
 import moblima.entity.MovieShowing;
-import moblima.boundary.MainInterface;
 import moblima.boundary.StaffInterface;
 import moblima.boundary.MovieGoerInterface;
 /**

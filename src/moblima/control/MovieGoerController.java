@@ -290,7 +290,7 @@ public class MovieGoerController extends UserController {
         content = movieGoerInterface.scanLine("Please input review content:");
         while (true) {
             rating = movieGoerInterface.scanInteger("Please input review rating (0-5): ");
-            if (rating > 5 || rating < 0) {
+            if (rating >= 0 && rating <= 5) {
                 break;
             } else {
                 movieGoerInterface.displayLine("Rating out of range, please try again");
